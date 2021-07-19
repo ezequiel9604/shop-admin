@@ -1,0 +1,165 @@
+
+header{
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid #dddddd;
+
+	width: 100%;
+	position: sticky;
+	top: 0;
+
+	background-color: #ffffff;
+	z-index: 0;
+}
+
+div.header-container{
+	/*border: 1px solid blue;*/
+	width: 95%;
+	margin: 6px auto;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+div.logo{
+	/*border: 1px solid red;*/
+	width: fit-content;
+	display: flex;
+	align-items: center;
+}
+
+div.logo button{
+	border: none;
+	width: fit-content;
+	display: flex;
+	padding: 2px;
+	margin-right: 20px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	transition: background-color 0.5s ease;
+}
+
+div.logo button:hover{
+	background-color: #f2f2f2;
+}
+
+div.logo button span{
+	font-size: 20px;
+}
+
+div.logo img{
+	/*border: 1px solid;*/
+	display: block;
+
+	width: 152px;
+	height: 35px;
+
+	object-fit: cover;
+}
+
+div.btn-options-container{
+	/*border: 1px solid red;*/
+	width: fit-content;
+	display: flex;
+}
+
+div.btn-options-container button{
+	border: none;
+	display: block;
+	padding: 0;
+	width: fit-content;
+	margin: 0 20px;
+	position: relative;
+	background-color: transparent;
+}
+
+div.btn-options-container button > span{
+	/*border: 1px solid;*/
+	display: inline-block;
+	font-size: 2em;
+	color: #4d4d4d;
+	border-radius: 10px;
+}
+
+div.btn-options-container button > i{
+	/*border: 1px solid;*/
+	display: inline-block;
+	position: absolute;
+	right: -7px;
+	bottom: -2px;
+
+	font-family: "raleway-medium";
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px 5px;
+	border-radius: 50%;
+	color: #ffffff;
+	background-color: #ff0000;
+}
+
+/*dropdown container*/
+ul.dropdown{
+	width: 150px;
+	display: none;
+
+	box-sizing: border-box;
+
+	background-color: #ffffff;
+	box-shadow: 1px 1px 1px #dddddd;
+	border-radius: 6px;
+
+	padding: 2px;
+	position: absolute;
+	right: -110%;
+	top: 50px;
+	
+	z-index: 1;
+}
+
+ul.dropdown::after {
+  content: "";
+  position: absolute;
+  top: -28%;
+  left: 58%;
+  margin-left: -5px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+ul.dropdown a{
+	/*border: 1px solid;*/
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+
+	text-align: left;
+	padding: 8px 12px;
+	color: #4d4d4d;
+	font-family: "raleway-medium";
+	font-size: 14px;
+
+	padding-left: 8px;
+}
+ul.dropdown a:hover{
+	background-color: #fafafa;
+}
+
+/*buttons*/
+button#btn-settings:hover ul.dropdown{
+	display: block;
+}
+
+.notifications-on > span{
+	animation-name: notif-animation;
+	animation-delay: 1s;
+	animation-duration: 0.2s;
+	animation-iteration-count: infinite;
+}
+
+/*animations*/
+@keyframes notif-animation{
+	0%{transform: rotate(30deg);}
+	50%{transform: rotate(-30deg);}
+	100%{transform: rotate(0deg);}
+}
+
