@@ -11,6 +11,12 @@
     font-family: "raleway-semibold";
     src: url("../fonts/Raleway-SemiBold.ttf");
 }
+
+@font-face{
+    font-family: "candal-regular";
+    src: url("../fonts/Candal-Regular.ttf");
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

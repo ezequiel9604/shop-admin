@@ -1,9 +1,15 @@
 
-header{
-	border-top: 1px solid transparent;
+header#main-header{
 	border-bottom: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
 
 	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 40px;
+
+	display: flex;
+	justify-content: space-between;
+
 	position: sticky;
 	top: 0;
 
@@ -11,23 +17,15 @@ header{
 	z-index: 0;
 }
 
-div.header-container{
-	/*border: 1px solid blue;*/
-	width: 95%;
-	margin: 6px auto;
-
-	display: flex;
-	justify-content: space-between;
-}
-
-div.logo{
-	/*border: 1px solid red;*/
+div.logo-container{
 	width: fit-content;
+	box-sizing: border-box;
+
 	display: flex;
 	align-items: center;
 }
 
-div.logo button{
+#btn-hide-sidebar{
 	border: none;
 	width: fit-content;
 	display: flex;
@@ -35,72 +33,69 @@ div.logo button{
 	margin-right: 20px;
 	background-color: #ffffff;
 	border-radius: 50%;
-	transition: background-color 0.5s ease;
 }
 
-div.logo button:hover{
+#btn-hide-sidebar:hover{
 	background-color: #f2f2f2;
 }
 
-div.logo button span{
-	font-size: 20px;
+#btn-hide-sidebar span{
+	font-size: 25px;
 }
 
-div.logo img{
-	/*border: 1px solid;*/
-	display: block;
-
-	width: 152px;
-	height: 35px;
-
-	object-fit: cover;
+.logo-title{
+	font-size: 32px;
+	font-family: "candal-regular", sans-serif;
+	color: #0099cc;
+	outline: none;
 }
 
 div.btn-options-container{
-	/*border: 1px solid red;*/
-	width: fit-content;
+	width: 10%;
+	box-sizing: border-box;
+
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-div.btn-options-container button{
+#btn-dropdown-settings, 
+#btn-show-notification{
 	border: none;
-	display: block;
-	padding: 0;
 	width: fit-content;
-	margin: 0 20px;
+
+	display: flex;
+
 	position: relative;
+
 	background-color: transparent;
 }
 
-div.btn-options-container button > span{
-	/*border: 1px solid;*/
-	display: inline-block;
+#btn-dropdown-settings span, 
+#btn-show-notification span{
 	font-size: 2em;
 	color: #4d4d4d;
 	border-radius: 10px;
 }
 
-div.btn-options-container button > i{
-	/*border: 1px solid;*/
-	display: inline-block;
+#btn-show-notification i{
 	position: absolute;
 	right: -7px;
 	bottom: -2px;
 
-	font-family: "raleway-medium";
-	font-size: 12px;
-	font-weight: bold;
-	padding: 2px 5px;
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 1em;
+	padding: 0px 5px;
+	padding-bottom: 2px;
 	border-radius: 50%;
+
 	color: #ffffff;
 	background-color: #ff0000;
 }
 
 /*dropdown container*/
-ul.dropdown{
+.dropdown-settings{
 	width: 150px;
-	display: none;
-
 	box-sizing: border-box;
 
 	background-color: #ffffff;
@@ -112,21 +107,22 @@ ul.dropdown{
 	right: -110%;
 	top: 50px;
 	
-	z-index: 1;
+	z-index: 50;
+	display: none; /*none or block*/
 }
 
-ul.dropdown::after {
+.dropdown-settings::after {
   content: "";
   position: absolute;
   top: -28%;
-  left: 58%;
+  left: 47%;
   margin-left: -5px;
   border-width: 15px;
   border-style: solid;
   border-color: transparent transparent #ffffff transparent;
 }
 
-ul.dropdown a{
+.setting-links{
 	/*border: 1px solid;*/
 	display: block;
 	width: 100%;
@@ -140,26 +136,23 @@ ul.dropdown a{
 
 	padding-left: 8px;
 }
-ul.dropdown a:hover{
+.setting-links:hover{
 	background-color: #fafafa;
 }
 
-/*buttons*/
-button#btn-settings:hover ul.dropdown{
+#btn-dropdown-settings:hover .dropdown-settings{
 	display: block;
 }
-
-.notifications-on > span{
-	animation-name: notif-animation;
+.notification-animation > span{
+	animation-name: animation-notification;
 	animation-delay: 1s;
 	animation-duration: 0.2s;
 	animation-iteration-count: infinite;
 }
 
 /*animations*/
-@keyframes notif-animation{
+@keyframes animation-notification{
 	0%{transform: rotate(30deg);}
 	50%{transform: rotate(-30deg);}
 	100%{transform: rotate(0deg);}
 }
-

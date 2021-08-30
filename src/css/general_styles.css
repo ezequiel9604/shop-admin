@@ -1,0 +1,32 @@
+
+div#outside-container{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    z-index: 0;
+}
+
+div#inside-container{
+    /*border: 1px solid red;*/
+    width: 100%;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition: 1s all ease;
+
+    z-index: 0;
+}
+
+main{
+    /*border: 1px solid;*/
+    width: 100%;
+    height: 955px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+
+    overflow: hidden;
+    z-index: 0;
+}

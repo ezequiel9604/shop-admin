@@ -1,0 +1,158 @@
+
+aside#main-sidebar{
+	width: 18%;
+	height: 100%;
+	box-sizing: border-box;
+
+	position: fixed;
+	top: 0;
+	left: -18%;
+
+	background-color:#4e5765;
+	transition: left 1s ease;
+
+	z-index: 0;
+}
+
+div.sidebar-header{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-color: #333333;
+}
+
+div.sidebar-header img{
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+
+	width: 60px;
+	height: 60px;
+
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.sidebar-admin-name{
+	width: fit-content;
+	margin: 20px auto;
+
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+
+div.sidebar-body{
+	width: 100%;
+	height: 700px;
+	margin-top: 10px;
+	overflow: auto;
+}
+
+/* width */
+div.sidebar-body::-webkit-scrollbar {
+ 	width: 10px;
+}
+/* Track */
+div.sidebar-body::-webkit-scrollbar-track {
+  	background: #f1f1f1; 
+}
+/* Handle */
+div.sidebar-body::-webkit-scrollbar-thumb {
+  	background: #6f7c90; 
+}
+/* Handle on hover */
+div.sidebar-body::-webkit-scrollbar-thumb:hover {
+  	background: #555; 
+}
+
+/*show more options button*/
+.btn-sidebar-accordion {
+	border: none;
+  	width: 100%;
+  	box-sizing: border-box;
+
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+
+  	outline: none;
+ 	background-color: #4e5765;
+ 	margin: 2px 0;
+  	padding: 8px 10px;
+ 	transition: 0.4s;
+}
+
+.btn-sidebar-active, .btn-sidebar-accordion:hover, .sidebar-panel a:hover {
+  background-color: #646f82;
+}
+
+.btn-sidebar-accordion a, 
+.btn-sidebar-accordion label{
+	/*border: 1px solid;*/
+	width: fit-content;
+
+	display: flex;
+	align-items: center;
+
+	outline: none;
+	font-family: "raleway-medium", sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.btn-sidebar-accordion span{
+	/*border: 1px solid;*/
+	font-size: 18px;
+	color: #ffffff;
+	margin-right: 5px;
+}
+
+.btn-sidebar-accordion strong{
+	/*border: 1px solid;*/
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 14px;
+	padding: 2px 6px;
+	color: #ffffff;
+
+	border-radius: 6px;
+}
+
+.small-number{
+	background-color: #40bf80;
+}
+.medium-number{
+	background-color: #ffc34d;
+}
+.large-number{
+	background-color: #ff4d4d;
+}
+
+/*panels container*/
+.sidebar-panel {
+	/*border: 1px solid;*/
+	width: 80%;
+	margin: 0 auto;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.sidebar-panel-links{
+	/*border: 1px solid;*/
+	display: block;
+	width: 99%;
+	margin: 2px 0;
+	box-sizing: border-box;
+
+	outline: none;
+	font-family: "raleway-regular", sans-serif;
+	font-size: 13px;
+	color: #ffffff;
+	cursor: pointer;
+	padding: 6px 10px;
+
+	border-radius: 2px;
+}
