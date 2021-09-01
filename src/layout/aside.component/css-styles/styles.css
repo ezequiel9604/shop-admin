@@ -8,7 +8,8 @@ aside#main-sidebar{
 	top: 0;
 	left: -18%;
 
-	background-color:#4e5765;
+	background-color:#f2f2f2;
+	border-right:1px solid #dddddd;
 	transition: left 1s ease;
 
 	z-index: 0;
@@ -18,7 +19,9 @@ div.sidebar-header{
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-	background-color: #333333;
+	background-color: #ffffff;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
 }
 
 div.sidebar-header img{
@@ -37,9 +40,9 @@ div.sidebar-header img{
 	width: fit-content;
 	margin: 20px auto;
 
-	font-family: "raleway-semibold", sans-serif;
+	font-family: "raleway-medium", sans-serif;
 	font-size: 16px;
-	color: #ffffff;
+	color: #4d4d4d;
 }
 
 
@@ -78,14 +81,14 @@ div.sidebar-body::-webkit-scrollbar-thumb:hover {
   	align-items: center;
 
   	outline: none;
- 	background-color: #4e5765;
+ 	background-color: #f2f2f2;
  	margin: 2px 0;
   	padding: 8px 10px;
  	transition: 0.4s;
 }
 
 .btn-sidebar-active, .btn-sidebar-accordion:hover, .sidebar-panel a:hover {
-  background-color: #646f82;
+  background-color: #dddddd;
 }
 
 .btn-sidebar-accordion a, 
@@ -97,16 +100,16 @@ div.sidebar-body::-webkit-scrollbar-thumb:hover {
 	align-items: center;
 
 	outline: none;
-	font-family: "raleway-medium", sans-serif;
+	font-family: "raleway-semibold", sans-serif;
 	font-size: 14px;
-	color: #ffffff;
+	color: #4d4d4d;
 	cursor: pointer;
 }
 
 .btn-sidebar-accordion span{
 	/*border: 1px solid;*/
 	font-size: 18px;
-	color: #ffffff;
+	color: #4d4d4d;
 	margin-right: 5px;
 }
 
@@ -148,9 +151,9 @@ div.sidebar-body::-webkit-scrollbar-thumb:hover {
 	box-sizing: border-box;
 
 	outline: none;
-	font-family: "raleway-regular", sans-serif;
+	font-family: "raleway-medium", sans-serif;
 	font-size: 13px;
-	color: #ffffff;
+	color: #4d4d4d;
 	cursor: pointer;
 	padding: 6px 10px;
 

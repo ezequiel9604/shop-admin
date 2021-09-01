@@ -21,12 +21,623 @@ div#inside-container{
 }
 
 main{
-    /*border: 1px solid;*/
     width: 100%;
-    height: 955px;
+    height: 100%;
     box-sizing: border-box;
     background-color: #f2f2f2;
 
-    overflow: hidden;
+	position: fixed;
+	top: 55px;
+	left: 0%;
+	transition: 1s all ease;
+
+    overflow: auto;
     z-index: 0;
+}
+
+
+
+
+div.ctn{
+	width: 95%;
+	margin: 20px auto;
+
+	border-radius: 4px 4px 0 0;
+	background-color: transparent;
+
+	z-index: 0;
+}
+
+/*box container*/
+div.box-container{
+	/*border: 1px solid red;*/
+	width: 100%;
+	margin: 20px 0;
+	position: relative;
+}
+
+/*box*/
+div.box{
+	box-sizing: border-box;
+
+	/*background-color: #ffffff;*/
+	box-shadow: 1px 1px 1px #dddddd;
+	border-radius: 6px;
+
+	overflow: hidden;
+}
+
+/* ------------------ box header ----------------------- */
+
+div.box-header{
+	width: 100%;
+	background-color: #4d4d4d;
+	box-shadow: 2px 2px 2px #dddddd;
+}
+div.box-header h2{
+	width: fit-content;
+	margin: 30px 20px;
+
+	font-family: "raleway-semibold";
+	font-size: 25px;
+	color: #ffffff;
+}
+
+
+
+/* ------------------ box filter ----------------------- */
+
+div.box-filter{
+	/*border: 1px solid;*/
+	width: 100%;
+	background-color: #ffffff;
+}
+
+/*filter 1*/
+div.filter-1{
+	width: 90%;
+	margin: 20px auto;
+
+	display: flex; 
+	justify-content: space-between;
+}
+
+div.filter-1 div{
+	/*border: 1px solid;*/
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+}
+div.filter-1 div select, 
+div.filter-1 div input, 
+div.filter-1 div button{
+	border: 1px solid #dddddd;
+	border-radius: 2px;
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+	padding: 4px 8px;
+	box-sizing: border-box;
+}
+div.filter-1 div select{
+	width: 15%;
+}
+div.filter-1 div input{
+	width: 60%;
+}
+div.filter-1 > div button{
+	width: 20%;
+	background-color: #f2f2f2;
+}
+
+div.filter-1 > a{
+	/*border: 1px solid;*/
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+	padding: 8px 8px; 
+}
+
+/*advance filter option container*/
+button#btn-filter-advance{
+	width: fit-content;
+	margin: 20px 0;
+	margin-left: 40px;
+	border-radius: 4px;
+
+	border: 1px solid #dddddd;
+	background-color: #f2f2f2;
+
+	display: flex;
+	align-items: center;
+	padding: 4px 10px;
+
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+}
+
+button#btn-filter-advance span{
+	/*border: 1px solid;*/
+	font-size: 20px;
+	color: #4d4d4d;
+}
+
+/*filter 2*/
+div.filter-2{
+	/*border: 1px solid #dddddd;*/
+	width: 90%;
+	margin: 10px auto;
+
+	display: none; /*flex or none*/
+	justify-content: space-between;
+}
+
+div.filter-2 div{
+	/*border: 1px solid;*/
+	width: 20%;
+}
+
+div.filter-2 div h4{
+	/*border: 1px solid;*/
+	width: 100%;
+	font-size: 14px;
+	font-family: "raleway-medium";
+	color: #4d4d4d;
+	padding: 4px 0px;
+	margin: 10px;
+}
+
+div.filter-2 div label{
+	display: block;
+
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+	padding: 4px 0px;
+	margin-bottom: 5px;
+}
+
+div.filter-2 div input[type=date]{
+	border: 1px solid #dddddd;
+	display: block;
+	width: 80%;
+	border-radius: 2px;
+	font-size: 11px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+	padding: 2px 0px;
+	box-sizing: border-box;
+}
+
+/* ------------------ box table ----------------------- */
+
+div.box-table{
+	width: 100%;
+	background-color: #ffffff;
+}
+
+div.box-table-head{
+	width: 100%;
+	margin: 0px auto;
+	margin-top: 20px;
+	margin-bottom: 5px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+div.box-table-head label{
+	/*border: 1px solid;*/
+	display: block;
+
+	text-align: center;
+	line-height: 20px;
+	font-size: 13px;
+	font-family: "raleway-semibold";
+	color: #4d4d4d;
+}
+
+div.box-table-body{
+	/*border: 1px solid;*/
+	width: 100%;
+}
+
+div.box-table-body article{
+	width: 100%;
+	border-top: 1px solid #dddddd;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+div.box-table-body article p{
+	/*border: 1px solid red;*/
+
+	text-align: center;
+	line-height: 40px;
+	font-size: 13px;
+	font-family: "raleway-medium";
+	color: #4d4d4d;
+}
+
+div.box-table-body article p img{
+	/*border: 1px solid;*/
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+div.box-table-body mark{
+	border-radius: 4px;
+	padding: 2px 4px;
+	color: #ffffff;
+}
+
+div.box-table-body article button{
+	border: 1px solid #dddddd;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+
+div.box-table-body article button span{
+	font-size: 20px;
+	color: #4d4d4d;
+}
+
+.box-table-success{
+	background-color: #00cc99;
+}
+.box-table-warning{
+	background-color: #ffcc00;
+}
+.box-table-secundary{
+	background-color: #0099ff;
+}
+.box-table-cancel{
+	background-color: #333333;
+}
+.box-table-error {
+	background-color: #ff3300;
+}
+
+
+/* ------------------ box update details ----------------------- */
+
+form.box-update-details{
+	/*border: 1px solid;*/
+	width: 90%;
+	margin: 10px auto;
+
+	display: none; /*flex or none*/
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+form.box-update-details > div article input,
+form.box-update-details > div select,
+form.box-update-details > div article select,
+form.box-update-details > div article textarea,
+form.box-update-details > div article button{
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+	border-radius: 2px;
+	padding: 4px 6px;
+
+	font-size: 13px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+}
+
+
+
+/* ------------------ box inside table ----------------------- */
+
+/*box inside table*/
+div.box-inside-table-head{
+	/*border: 1px solid;*/
+	width: 100%;
+	margin: 0px auto;
+
+	display: flex;
+	justify-content: space-between;
+	background-color: #f2f2f2;
+}
+div.box-inside-table-head label{
+	/*border: 1px solid;*/
+	display: block;
+	
+	text-align: center;
+	line-height: 18px;
+	font-size: 13px;
+	font-family: "raleway-semibold";
+	color: #4d4d4d;
+}
+
+div.box-inside-table-body{
+	/*border: 1px solid red;*/
+	width: 100%;
+}
+
+div.box-inside-table-body article{
+	width: 100%;
+	border-top: 1px solid #dddddd;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+div.box-inside-table-body article p{
+	/*border: 1px solid red;*/
+
+	text-align: center;
+	line-height: 18px;
+	font-size: 13px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+}
+
+div.box-inside-table-body article p img{
+	/*border: 1px solid;*/
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+div.box-inside-table-body mark{
+	border-radius: 4px;
+	padding: 2px 4px;
+	color: #ffffff;
+}
+
+div.box-inside-table-footer{
+	/*border: 1px solid;*/
+	width: 90%;
+	margin: 5px auto;
+
+	display: flex;
+	justify-content:space-around;
+}
+
+div.box-inside-table-body article p select,
+div.box-inside-table-footer button{
+	border: 1px solid #dddddd;
+	border-radius: 2px;
+	padding: 4px 6px;
+	font-size: 13px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+}
+
+
+/* ------------------ box inside control ----------------------- */
+
+div.box-inside-control{
+	/*border: 1px solid blue;*/
+	width: 90%;
+	margin: 15px auto;
+	box-sizing: border-box;
+
+	display: flex;
+	justify-content: space-between;
+
+	background-color: transparent;
+	overflow: hidden;
+}
+div.box-inside-control .box-buttons{
+	/*border: 1px solid;*/
+	width: fit-content;
+	color: #4d4d4d;
+}
+
+div.box-inside-control .box-buttons label,
+div.box-inside-control .box-buttons input[type=week],
+div.box-inside-control .box-buttons select{
+	/*border: 1px solid;*/
+	width: fit-content;
+	margin: 0 5px;
+	font-family: raleway-medium;
+	font-size: 13px;
+	border: transparent;
+	padding: 2px;
+	background-color: #ffffff;
+	color: #4d4d4d;
+	border-radius: 6px;
+}
+div.box-inside-control .box-buttons mark{
+	width: fit-content;
+	font-size: 13px;
+	font-family: "raleway-medium";
+	border-radius: 4px;
+	padding: 2px 4px;
+	color: #ffffff;
+	cursor: default;
+}
+
+
+/* ------------------ box chart line ----------------------- */
+
+div.box-chart-lines{
+	/*border: 1px solid;*/
+	width: 100%;
+	background-color:#ffffff;
+	position: relative;
+}
+
+div.chart-lines svg{
+	width: 100%;
+	height: inherit;
+}
+div.chart-lines svg text{
+	font-family: raleway-regular;
+	font-size: 13px;
+}
+
+div.box-users-articles{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+/* ------------------ tooltip chat lines ----------------------- */
+
+div#tooltip-chart-lines{
+	/*border: 1px solid;*/
+	width: fit-content;
+	display: none; /*block or none*/
+	position: absolute;
+	z-index: 1;
+
+	text-align: center;
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #ffffff;
+}
+div#tooltip-chart-lines div:first-child{
+	padding: 6px 4px;
+	background-color: rgba(128, 128, 128, 0.8);
+	border-radius: 4px 4px 0 0;
+}
+div#tooltip-chart-lines div:last-child{
+	padding: 10px 4px;
+	background-color: rgba(128, 128, 128, 0.5);
+	border-radius: 0 0 4px 4px;
+}
+
+/* ------------------ action buttons ----------------------- */
+
+div.action-buttons{
+	/*border: 1px solid;*/
+	width: 90%;
+	margin: 10px auto;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+div.action-buttons button{
+	width: fit-content;
+	border: 1px solid #dddddd;
+
+	padding: 4px;
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+}
+
+.custom-file-upload {
+    border: 1px solid #dddddd;
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+#file-upload {
+    display: none;
+}
+
+
+
+
+/* ------------------ box add item ----------------------- */
+
+div.box-add-item{
+	width: 100%;
+	background-color: #ffffff;
+}
+
+div.box-add-item form{
+	/*border: 1px solid red;*/
+	width: 90%;
+	margin: 20px auto;
+}
+
+div.box-add-item form strong{
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-family: "raleway-medium";
+	color: #4d4d4d;
+}
+
+div.box-add-item form input,
+div.box-add-item form select,
+div.box-add-item textarea,
+div.box-add-item button{
+	box-sizing: border-box;
+	margin: 2px 0;
+	padding: 4px 6px;
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+
+	border: 1px solid #dddddd;
+}
+
+div.box-add-item hr{
+	width: 90%;
+	margin: 20px auto;
+	border: 0;
+    height: 1px;
+    background: #dddddd;
+    background-image: linear-gradient(to right, #ccc, #dddddd, #ccc);
+}
+
+div.single-block-add-item,
+div.double-block-add-item, 
+div.triple-block-add-item{
+	/*border: 1px solid;*/
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+div.double-block-add-item, 
+div.triple-block-add-item{
+	display: flex;
+	justify-content: space-between;
+}
+
+.input-add-item label{
+	display: inline-block;
+	margin: 0;
+	margin-right: 20px;
+	font-size: 14px;
+	font-family: "raleway-regular";
+	color: #4d4d4d;
+}
+.input-add-item input[type=text],
+.input-add-item input[type=date],
+.input-add-item input[type=email],
+.input-add-item input[type=password],
+.input-add-item textarea,
+.input-add-item select{
+	width: 80%;
+}
+.input-add-item textarea{
+	height: 150px;
+}
+.input-add-item button{
+	border-radius: 2px;
+	background-color: #f2f2f2;
+}
+
+div.double-block-add-item .input-add-item{
+	width: 50%;
+}
+
+div.triple-block-add-item .input-add-item{
+	width: 30%;
 }

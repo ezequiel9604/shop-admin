@@ -5,10 +5,10 @@ import './css-styles/styles.css';
 
 import ManAvatar from '../../images/placeholder-man.png';
 
-
 class Aside extends Component {
 
     constructor(props){
+
         super(props);
 
         this.state = {
@@ -18,7 +18,6 @@ class Aside extends Component {
         }
 
         this.changeStatePanel = this.changeStatePanel.bind(this);
-
     }
 
     changeStatePanel(id){
@@ -36,12 +35,11 @@ class Aside extends Component {
                 isChartsOpen: !state.isChartsOpen
             }));
         }
-
     }
 
     render() { 
 
-        const {isSideBarOpen} = this.props;
+        const { isSideBarOpen } = this.props;
 
         return (  
             <aside id="main-sidebar" style={(isSideBarOpen)? {left:'0'} : null} >

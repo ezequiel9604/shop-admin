@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import { Component } from 'react';
 import { Route, Switch } from 'react-router';
 
 import './css/css-reset.css';
@@ -7,15 +7,20 @@ import './css/general_styles.css';
 import Header from './layout/header.component/header';
 import Aside from  './layout/aside.component/aside';
 
+import TimeOverview from './page/timeOverview.component/TimeOverview';
+import GeneralsOverview from './page/generalsOverview.component/GeneralsOverview';
+import ViewsOverview from './page/viewsOverview.component/ViewsOverview';
+
 
 class App extends Component {
 
     constructor(props) {
+
         super(props);
 
         this.state = { 
-            IsSideBarOpen: false
-        }
+            IsSideBarOpen: true
+        };
 
         this.showSidebarHandler = this.showSidebarHandler.bind(this);
     }
@@ -44,9 +49,16 @@ class App extends Component {
                                 
                                 <Header onIsSidebarOpen={this.showSidebarHandler} />
     
-                                <main>
+                                <main style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
                                     
-                                    {/* content goes here */}
+                                    <div className="ctn">
+                                        <TimeOverview />
+                                        
+                                        <ViewsOverview />
+
+                                        <GeneralsOverview />
+                                    </div>
+
                                 </main>
     
                             </div>	
