@@ -6,6 +6,7 @@ import './css-styles/styles.css';
 class GeneralsOverview extends Component {
 
     constructor(props) {
+        
         super(props);
 
         this.state = { 
@@ -25,11 +26,11 @@ class GeneralsOverview extends Component {
 
         };
 
-        this.calculatePorcents = this.calculatePorcents.bind(this);
+        this.calculatePercent = this.calculatePercent.bind(this);
 
     }
 
-    calculatePorcents(previous, current){
+    calculatePercent(previous, current){
 
         let total = (current - previous) / current;
 
@@ -53,17 +54,17 @@ class GeneralsOverview extends Component {
                             <div>
                                 <Link to='/'>{val.name}</Link>
                                 <strong>{val.CurrentWeekTotal}</strong>
-                                {(this.calculatePorcents(val.PreviousWeekTotal, val.CurrentWeekTotal) < 0)? 
+                                {(this.calculatePercent(val.PreviousWeekTotal, val.CurrentWeekTotal) < 0)? 
                                 <p className="decrease">
                                    {(val.CurrentWeekTotal-val.PreviousWeekTotal)} &nbsp;
                                    (<span className="material-icons">south</span>
-                                   {Math.abs(this.calculatePorcents(val.PreviousWeekTotal, val.CurrentWeekTotal))}%)
+                                   {Math.abs(this.calculatePercent(val.PreviousWeekTotal, val.CurrentWeekTotal))}%)
                                 </p> 
                                 :
                                 <p className="increase">
                                    +{(val.CurrentWeekTotal-val.PreviousWeekTotal)} &nbsp;
                                    (<span className="material-icons">north</span>
-                                   {this.calculatePorcents(val.PreviousWeekTotal, val.CurrentWeekTotal)}%)
+                                   {this.calculatePercent(val.PreviousWeekTotal, val.CurrentWeekTotal)}%)
                                 </p>}
                                 
                             </div>

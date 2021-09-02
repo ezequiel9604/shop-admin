@@ -80,11 +80,11 @@ div.btn-options-container{
 
 #btn-show-notification i{
 	position: absolute;
-	right: -7px;
+	right: -2px;
 	bottom: -2px;
 
 	font-family: "raleway-semibold", sans-serif;
-	font-size: 1em;
+	font-size: 0.9em;
 	padding: 0px 5px;
 	padding-bottom: 2px;
 	border-radius: 50%;

@@ -1,0 +1,70 @@
+
+
+div.box-gender-age-address{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+div.box-gender, 
+div.box-age, 
+div.box-address{
+	width: 32%;
+	background-color: #ffffff;
+}
+
+div.chart-gender, 
+div.chart-age, 
+div.chart-address{
+	/*border: 1px solid;*/
+	width: 90%;
+	height: 210px;
+	margin: 10px auto;
+
+	position: relative;
+}
+
+div.chart-gender svg, 
+div.chart-age svg,
+div.chart-address svg{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+div.chart-gender svg text,
+div.chart-age svg text, 
+div.chart-address svg text{
+	font-family: "raleway-regular", sans-serif;
+	font-size: 13px;
+}
+
+/*tooltip chart-age*/
+div#tooltip-chart-age, 
+div#tooltip-chart-address,
+div#tooltip-chart-gender{
+	/*border: 1px solid;*/
+	width: fit-content;
+	display: none; /*block or none*/
+	position: absolute;
+	z-index: 10;
+
+	text-align: center;
+	font-size: 12px;
+	font-family: "raleway-regular", sans-serif;
+	color: #ffffff;
+}
+div#tooltip-chart-gender div:first-child,
+div#tooltip-chart-age div:first-child, 
+div#tooltip-chart-address div:first-child{
+	padding: 6px 4px;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 4px 4px 0 0;
+}
+div#tooltip-chart-gender div:last-child
+div#tooltip-chart-age div:last-child, 
+div#tooltip-chart-address div:last-child{
+	padding: 10px 4px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 0 0 4px 4px;
+}

@@ -9,17 +9,71 @@ class ViewsOverview extends Component {
 
         super(props);
 
-        this.state = {  };
+        this.state = { 
+            Views: [  6, 12, 15, 11,  23, 21, 26,  20, 24, 47, 17,  15,
+                    12, 34, 48, 14, 26, 36, 34, 35,  41, 21, 29,  19],
+
+            IsToolTipChartShowing: false,
+            ToolTipChartLocation: [20, 60],
+            TimeViews: null
+        };
 
         this.showTooltipInfo = this.showTooltipInfo.bind(this);
-
+        this.renderToolTipChart = this.renderToolTipChart.bind(this);
+        this.removeToolTipChart = this.removeToolTipChart.bind(this);
     }
 
-    showTooltipInfo(e){
-        console.log(e);
+    showTooltipInfo(e, start, end, amount){
+
+        this.setState({
+            IsToolTipChartShowing: true,
+            ToolTipChartLocation: [e.screenX-300, e.screenY-400],
+            TimeViews: amount
+        });
+        
+    }
+
+    renderToolTipChart(views){
+        
+        let left = this.state.ToolTipChartLocation[0];
+        let top = this.state.ToolTipChartLocation[1];
+
+        const months = [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+            "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+
+        const today = new Date();
+
+        if(this.state.IsToolTipChartShowing){
+
+            return(
+                <div style={{left: left+"px", top: top+"px"}} 
+                    id="tooltip-chart-lines" >
+                    <div>{months[today.getMonth()]+' '+today.getDate()}</div>
+                    <div>Visitas: {this.state.TimeViews}</div>
+                </div>
+            );
+        }
+
+        return null;
+    }
+
+    removeToolTipChart(){
+        this.setState({
+            IsToolTipChartShowing: false,
+        });
+    }
+
+    renderCirclePoints(){
+
+        
+
     }
 
     render() { 
+
+        
         return (
             <div className="box-container">
     
@@ -27,29 +81,28 @@ class ViewsOverview extends Component {
                     
                     <div className="box-inside-control">
                         <div className="box-buttons">
-                            <label>Visitas</label>
+                            <label>Visitas del dia</label>
                         </div>
                     </div>
     
-                    <div className="chart-lines">
-                        
-                        <svg>
+                    <div className="chart-lines" >     
+                        <svg ref={(elem) => (this.chartLine = elem)}>
                             {/* should be 10 < y <=240 
                             range numbers */}
                             <g fill="#4d4d4d">
-                                <text x="0" y="10">90</text>		
-                                <text x="0" y="40">80</text>	
-                                <text x="0" y="70">70</text>
-                                <text x="0" y="100">60</text>
-                                <text x="0" y="130">50</text>
-                                <text x="0" y="160">40</text>
-                                <text x="0" y="190">30</text>
-                                <text x="0" y="220">20</text>
-                                <text x="0" y="250">10</text>
+                                <text x="0" y="10">180</text>
+                                <text x="0" y="40">160</text>		
+                                <text x="0" y="70">140</text>
+                                <text x="0" y="100">120</text>
+                                <text x="0" y="130">100</text>		
+                                <text x="0" y="160">80</text>	
+                                <text x="0" y="190">60</text>
+                                <text x="0" y="220">40</text>
+                                <text x="0" y="250">20</text>
                                 <text x="0" y="280">0</text>
                             </g>
                             {/* horizontal lines */}
-                            <g stroke="#dddddd" strokeDasharray="0">
+                            <g stroke="#999999" strokeWidth='1' strokeDasharray="0">
                                 <line x1="2%" y1="10" x2="99%" y2="10" />
                                 <line x1="2%" y1="40" x2="99%" y2="40" />
                                 <line x1="2%" y1="70" x2="99%" y2="70" />
@@ -94,22 +147,30 @@ class ViewsOverview extends Component {
                             </g>
     
                             <g fill="#0099cc">
-                                <circle cx="8%" cy="200" r="6" 
-                                    onMouseMove={(e)=> this.showTooltipInfo(e)} />
-                                <circle cx="24%" cy="245" r="6" />
-                                <circle cx="41%" cy="180" r="6" />
-                                <circle cx="58%" cy="158" r="6" />
-                                <circle cx="74%" cy="196" r="6" />
-                                <circle cx="90%" cy="210" r="6" />
+
+                                {this.state.Views.map((val, ind, arr)=> {
+
+                                    if(ind % 4 === 0){
+                                        
+                                        let formatedAmount = (280-(val+arr[ind+1]+arr[ind+2]+arr[ind+3]))-20;
+                                        let amount =(val+arr[ind+1]+arr[ind+2]+arr[ind+3]);
+                                        return (
+                                            <circle cx={(ind*4+9)+'%'} cy={formatedAmount} r="6" 
+                                            onMouseMove={(e)=> this.showTooltipInfo(e, ind, ind+3, amount)}
+                                            onMouseOut={this.removeToolTipChart} key={ind} />
+                                        )
+                                    }
+
+                                    return null;
+
+                                })} 
+
                             </g>
     
                         Sorry, your browser does not support inline SVG.
                         </svg>
     
-                        <div id="tooltip-chart-lines">
-                            <div></div>
-                            <div></div>
-                        </div>
+                        {this.renderToolTipChart()}
     
                     </div>
     

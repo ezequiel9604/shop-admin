@@ -478,10 +478,11 @@ div.box-chart-lines{
 div.chart-lines svg{
 	width: 100%;
 	height: inherit;
+	position: relative;
 }
 div.chart-lines svg text{
 	font-family: raleway-regular;
-	font-size: 13px;
+	font-size: 12px;
 }
 
 div.box-users-articles{
@@ -495,9 +496,12 @@ div.box-users-articles{
 div#tooltip-chart-lines{
 	/*border: 1px solid;*/
 	width: fit-content;
-	display: none; /*block or none*/
+	display: block; /*block or none*/
+
 	position: absolute;
-	z-index: 1;
+	left: 20px;
+	top: 20px;
+	z-index: 10;
 
 	text-align: center;
 	font-size: 14px;
@@ -506,12 +510,12 @@ div#tooltip-chart-lines{
 }
 div#tooltip-chart-lines div:first-child{
 	padding: 6px 4px;
-	background-color: rgba(128, 128, 128, 0.8);
+	background-color: rgba(0, 0, 0, 0.6);
 	border-radius: 4px 4px 0 0;
 }
 div#tooltip-chart-lines div:last-child{
 	padding: 10px 4px;
-	background-color: rgba(128, 128, 128, 0.5);
+	background-color: rgba(0, 0, 0, 0.4);
 	border-radius: 0 0 4px 4px;
 }
 

@@ -28,9 +28,11 @@ class Header extends Component {
                         </ul>
                     </button>
 
-                    <button id="btn-show-notification" className="notification-animation">
+                    <button onClick={()=> this.props.onIsNotificationOpen()} 
+                        id="btn-show-notification"
+                        className={(this.props.onNotificationAmount > 0)? 'notification-animation': null}>
                         <span className="material-icons-sharp">notifications_active</span>
-                        <i>9</i>
+                        <i>{this.props.onNotificationAmount}</i>
                     </button>
 
                 </div>	
