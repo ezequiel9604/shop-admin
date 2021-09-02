@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router';
 import './css/css-reset.css';
 import './css/general_styles.css';
 
-import Header from './layout/header.component/header';
-import Aside from  './layout/aside.component/aside';
+import Header from './layout/header.component/Header';
+import Aside from  './layout/aside.component/Aside';
 import Notification from './layout/notification.component/Notification';
 
 import TimeOverview from './page/timeOverview.component/TimeOverview';
