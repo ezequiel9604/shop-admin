@@ -8,10 +8,8 @@ import Header from './layout/header.component/Header';
 import Aside from  './layout/aside.component/Aside';
 import Notification from './layout/notification.component/Notification';
 
-import TimeOverview from './page/timeOverview.component/TimeOverview';
-import GeneralsOverview from './page/generalsOverview.component/GeneralsOverview';
-import ViewsOverview from './page/viewsOverview.component/ViewsOverview';
-import UserOverview from './page/userOverview.component/UserOverview';
+import Home from './page/home.component/Home';
+import Client from './page/client.component/Client';
 
 
 class App extends Component {
@@ -25,10 +23,12 @@ class App extends Component {
 
         this.state = { 
             Notifications: [
-                {id: 'noti001', text: '1'+txt},
-                {id: 'noti002', text: '2'+txt},
-                {id: 'noti003', text: '3'+txt},
-                {id: 'noti004', text: '4'+txt}
+                {id: 'noti001', text: '1 '+txt},
+                {id: 'noti002', text: '2 '+txt},
+                {id: 'noti003', text: '3 '+txt},
+                {id: 'noti004', text: '4 '+txt},
+                {id: 'noti005', text: '5 '+txt},
+                {id: 'noti006', text: '6 '+txt}
             ],
 
             IsSideBarOpen: true,
@@ -53,13 +53,11 @@ class App extends Component {
     }
 
     removeNotificationHandler(id){
-
         const newArr = this.state.Notifications.filter((current) => {
             return current.id !== id;
         });
 
         this.setState({ Notifications: newArr});
-
     }
 
     render() { 
@@ -86,14 +84,7 @@ class App extends Component {
                                 <main style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
                                     
                                     <div className="ctn">
-                                        <TimeOverview />
-
-                                        <GeneralsOverview />
-                                        
-                                        <ViewsOverview />
-
-                                        <UserOverview />
-
+                                        <Home />
                                     </div>
 
                                 </main>
@@ -108,6 +99,39 @@ class App extends Component {
                         </div>  
                     );
     
+                }} />
+
+                <Route path={'/clients'} exact={true} render={() => {
+                    
+                    return ( <div id="outside-container">
+
+                            <Aside isSideBarOpen={IsSideBarOpen} /> 
+
+                            <div id="inside-container" 
+                                style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
+                                
+                                <Header onIsSidebarOpen={this.switchSideBarHandler} 
+                                    onNotificationAmount={Notifications.length}
+                                    onIsNotificationOpen={this.switchNotificationHandler} />
+
+                                <main style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
+                                    
+                                    <div className="ctn">
+                                        <Client />
+                                    </div>
+
+                                </main>
+
+                            </div>
+
+                            {(this.state.IsNotificationOpen) && 
+                            <Notification notifications={Notifications} 
+                                onRemoveNotification={this.removeNotificationHandler}
+                                onIsNotificationOpen={this.switchNotificationHandler} /> }	
+
+                        </div>  
+                    );
+
                 }} />
     
             </Switch>

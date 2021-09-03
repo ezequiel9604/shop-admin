@@ -6,6 +6,7 @@ import './css-style/styles.css';
 import React from 'react';
 
 function Notification(props) {
+    
     return (  
         <div id="notification-modal-container">
             <div id="notification">

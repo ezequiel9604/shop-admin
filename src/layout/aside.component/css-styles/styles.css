@@ -117,7 +117,8 @@ div.sidebar-body::-webkit-scrollbar-thumb:hover {
 	/*border: 1px solid;*/
 	font-family: "raleway-semibold", sans-serif;
 	font-size: 14px;
-	padding: 2px 6px;
+	padding: 0px 6px;
+	padding-bottom: 2px;
 	color: #ffffff;
 
 	border-radius: 6px;

@@ -65,12 +65,6 @@ class ViewsOverview extends Component {
         });
     }
 
-    renderCirclePoints(){
-
-        
-
-    }
-
     render() { 
 
         

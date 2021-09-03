@@ -131,13 +131,14 @@ div.btn-options-container{
 	text-align: left;
 	padding: 8px 12px;
 	color: #4d4d4d;
-	font-family: "raleway-medium";
+	font-family: "raleway-medium", sans-serif;
 	font-size: 14px;
 
 	padding-left: 8px;
 }
+
 .setting-links:hover{
-	background-color: #fafafa;
+	background-color: #f2f2f2;
 }
 
 #btn-dropdown-settings:hover .dropdown-settings{

@@ -67,7 +67,7 @@ class Aside extends Component {
                     <ul style={(this.state.isGeneralsOpen)? {maxHeight: '106px'}:{maxHeight: '0'}} 
                         className="sidebar-panel">
                         <Link to="/" className="sidebar-panel-links">Pedido</Link>
-                        <Link to="/" className="sidebar-panel-links">Usuario</Link>
+                        <Link to="/clients" className="sidebar-panel-links">Usuario</Link>
                         <Link to="/" className="sidebar-panel-links">Inventario</Link>
                         <Link to="/" className="sidebar-panel-links">Comentario</Link>
                     </ul>
