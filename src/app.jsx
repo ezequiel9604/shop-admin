@@ -5,7 +5,7 @@ import './css/css-reset.css';
 import './css/general_styles.css';
 
 import Header from './layout/header.component/Header';
-import Aside from  './layout/aside.component/Aside';
+import Aside from './layout/aside.component/Aside';
 import Notification from './layout/notification.component/Notification';
 
 import Home from './page/home.component/Home';
