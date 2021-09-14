@@ -22,7 +22,7 @@ function Header(props) {
                 <button id="btn-dropdown-settings">
                     <span className="material-icons-sharp ">settings</span>
                     <ul className="dropdown-settings">
-                        <Link to='/' className='setting-links'>Mi perfil</Link>
+                        <Link to='/profile' className='setting-links'>Ver perfil</Link>
                         <Link to='/' className='setting-links'>Agregar admin</Link>
                         <Link to='/' className='setting-links'>Cerrar sessión</Link>
                     </ul>

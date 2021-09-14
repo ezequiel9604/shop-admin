@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import ClientsCard from "./ClientsCard";
+import FilterClients from "../filter.component/FilterClients";
 
 import './css-styles/styles.css';
 
@@ -14,6 +15,7 @@ class Client extends Component {
         super(props);
         
         this.state = {  
+
             Clients: [
                 {   id: 'USR-025456', name: 'Sarah Doe', email: 'sarahdoe@gmail.com', 
                     image: WomanAvatar, gender: 'F', status: 'C', type: 'N', phone: '809-111-0000',
@@ -44,29 +46,40 @@ class Client extends Component {
 
     }
 
-
     render() {
 
         const { Clients } = this.state;
 
         return (  
             
-            <div className="box-container">
-                
-                <div className="box box-table">
-                        
-                    <div className="box-table-head">
-                        <label>Imagen / Codigo</label>
-                        <label>Nombre</label>
-                        <label>Email</label>
-                        <label>Genero</label>
-                        <label>Estado</label>
-                        <label>Detalles</label>
-                    </div>
+            <div id='users'>
 
-                    {Clients.map((val, id) => {
-                        return <ClientsCard clients={val} key={id} />
-                    })}	
+                <div className="box-container">
+                    <div className="box box-header">
+                        <h2>Generales Usuarios</h2>
+                    </div>
+                </div>
+
+                <FilterClients />
+
+                <div className="box-container">
+                
+                    <div className="box box-table">
+                            
+                        <div className="box-table-head">
+                            <label>Imagen / Codigo</label>
+                            <label>Nombre</label>
+                            <label>Email</label>
+                            <label>Genero</label>
+                            <label>Estado</label>
+                            <label>Detalles</label>
+                        </div>
+
+                        {Clients.map((current) => {
+                            return <ClientsCard clients={current} key={current.id} />
+                        })}	
+
+                    </div>
 
                 </div>
 

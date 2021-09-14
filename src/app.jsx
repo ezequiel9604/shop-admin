@@ -10,6 +10,7 @@ import Notification from './layout/notification.component/Notification';
 
 import Home from './page/home.component/Home';
 import Client from './page/client.component/Client';
+import Profile from './page/profile.component/Profile';
 
 
 class App extends Component {
@@ -101,7 +102,7 @@ class App extends Component {
     
                 }} />
 
-                <Route path={'/clients'} exact={true} render={() => {
+                <Route path={'/clients'} render={() => {
                     
                     return ( <div id="outside-container">
 
@@ -118,6 +119,39 @@ class App extends Component {
                                     
                                     <div className="ctn">
                                         <Client />
+                                    </div>
+
+                                </main>
+
+                            </div>
+
+                            {(this.state.IsNotificationOpen) && 
+                            <Notification notifications={Notifications} 
+                                onRemoveNotification={this.removeNotificationHandler}
+                                onIsNotificationOpen={this.switchNotificationHandler} /> }	
+
+                        </div>  
+                    );
+
+                }} />
+
+                <Route path={'/profile'} render={() => {
+                    
+                    return ( <div id="outside-container">
+
+                            <Aside isSideBarOpen={IsSideBarOpen} /> 
+
+                            <div id="inside-container" 
+                                style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
+                                
+                                <Header onIsSidebarOpen={this.switchSideBarHandler} 
+                                    onNotificationAmount={Notifications.length}
+                                    onIsNotificationOpen={this.switchNotificationHandler} />
+
+                                <main style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
+                                    
+                                    <div className="ctn">
+                                        <Profile />
                                     </div>
 
                                 </main>

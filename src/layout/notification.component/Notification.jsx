@@ -1,12 +1,13 @@
-
+import React from 'react';
 import { Link } from "react-router-dom";
 
 import './css-style/styles.css';
 
-import React from 'react';
 
 function Notification(props) {
     
+    const {notifications} = props;
+
     return (  
         <div id="notification-modal-container">
             <div id="notification">
@@ -18,12 +19,12 @@ function Notification(props) {
                 </div>	
                 <div className="notification-body">
 
-                {props.notifications.map((val) => {
+                {notifications.map((current) => {
 
                     return (
-                        <div key={val.id}>
-                            <Link to='/'>{val.text}</Link>
-                            <button onClick={()=>props.onRemoveNotification(val.id)} 
+                        <div key={current.id}>
+                            <Link to='/'>{current.text}</Link>
+                            <button onClick={()=>props.onRemoveNotification(current.id)} 
                                 className="btn-remove-notification">
                                 <span className="material-icons-outlined">cancel</span>
                             </button>

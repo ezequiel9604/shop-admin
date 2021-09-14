@@ -1,0 +1,84 @@
+
+div.box-admin-profile{
+	width: 100%;
+	background-color: #ffffff;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+div.profile-left-side{
+	/*border: 1px solid;*/
+	width: 30%;
+	margin: 20px 0;
+}
+
+div.profile-left-side img{
+	display: block;
+	width: 150px;
+	height: 150px;
+	margin: 20px auto;
+
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+div.profile-left-side h4{
+/*	border: 1px solid;*/
+	text-align: center;
+
+	font-size: 18px;
+	font-family: "raleway-semibold", sans-serif;
+	color: #4d4d4d;
+}
+
+div.profile-left-side h5{
+	/*border: 1px solid;*/
+	margin: 10px 0;
+	text-align: center;
+
+	font-size: 14px;
+	font-family: "raleway-medium", sans-serif;
+	color: #4d4d4d;
+}
+
+div.profile-right-side{
+	/*border: 1px solid;*/
+	width: 60%;
+	margin: 20px 0;
+}
+
+div.profile-right-side form{
+	/*border: 1px solid blue;*/
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+div.profile-right-side article{
+	/*border: 1px solid red;*/
+	width: 48%;
+	margin: 10px 0;
+}
+
+div.profile-right-side article label{
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-family: "raleway-medium", sans-serif;
+	color: #4d4d4d;
+}
+
+div.profile-right-side article input{
+	display: block;
+	width: 90%;
+	box-sizing: border-box;
+
+	padding: 4px 6px;
+	font-size: 14px;
+	font-family: "raleway-regular", sans-serif;
+	color: #4d4d4d;
+
+	border: 1px solid #dddddd;
+}

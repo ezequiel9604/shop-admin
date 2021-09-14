@@ -11,12 +11,12 @@ class ClientsCard extends Component {
             IsDetailsOpen: false
         }
 
-        this.selectClientStatus = this.selectClientStatus.bind(this);
-        this.selectClientType = this.selectClientType.bind(this);
-        this.switchDetailsStatus = this.switchDetailsStatus.bind(this);
+        this.formatClientStatus = this.formatClientStatus.bind(this);
+        this.formatClientType = this.formatClientType.bind(this);
+        this.switchDetailsStatusHandler = this.switchDetailsStatusHandler.bind(this);
     }
 
-    selectClientStatus(status){
+    formatClientStatus(status){
         if(status === 'C'){
             return <mark className="box-table-success">Conectado</mark>;
         } else if(status === 'S'){
@@ -28,15 +28,17 @@ class ClientsCard extends Component {
         }
     }
 
-    selectClientType(type, id){
+    formatClientType(type, id){
         if(type === 'N'){
             return (
                 <React.Fragment>
                     <label htmlFor={'normal-type'+id}>
-                        <input type="radio" name={'type'+id} id={'normal-type'+id} defaultChecked /> Normal
+                        <input type="radio" 
+                            name={'type'+id} id={'normal-type'+id} defaultChecked /> Normal
                     </label>
                     <label htmlFor={'express-type'+id}>
-                        <input type="radio" name={'type'+id} id={'express-type'+id} /> Expreso
+                        <input type="radio" 
+                            name={'type'+id} id={'express-type'+id} /> Expreso
                     </label>
                 </React.Fragment>
             )
@@ -45,17 +47,19 @@ class ClientsCard extends Component {
         return (
             <React.Fragment>
                 <label htmlFor={'normal-type'+id}>
-                    <input type="radio" id={'normal-type'+id} /> Normal
+                    <input type="radio" 
+                        id={'normal-type'+id} /> Normal
                 </label>
                 <label htmlFor={'express-type'+id}>
-                    <input type="radio" id={'express-type'+id} defaultChecked /> Expreso
+                    <input type="radio" 
+                        id={'express-type'+id} defaultChecked /> Expreso
                 </label>
             </React.Fragment>
         )
 
     }
 
-    switchDetailsStatus(){
+    switchDetailsStatusHandler(){
         this.setState((state) => ({
             IsDetailsOpen: !state.IsDetailsOpen
         }));
@@ -68,7 +72,7 @@ class ClientsCard extends Component {
         return (  
             <div className="box-table-body">
 
-                <div key={clients.id}>
+                <div>
                     <article>
                         <p><img src={clients.image} alt='' />
                             {clients.id}
@@ -76,9 +80,9 @@ class ClientsCard extends Component {
                         <p>{clients.name}</p>
                         <p>{clients.email}</p>
                         <p>{(clients.gender === 'F')? 'Mujer':'Hombre'}</p>
-                        <p>{this.selectClientStatus(clients.status)}</p>
+                        <p>{this.formatClientStatus(clients.status)}</p>
                         <p>
-                            <button onClick={this.switchDetailsStatus} 
+                            <button onClick={this.switchDetailsStatusHandler} 
                                 type="button" className="btn-see-details">
                                 <span className="material-icons-outlined">
                                 {(this.state.IsDetailsOpen)? 'expand_less':'expand_more'}
@@ -87,7 +91,7 @@ class ClientsCard extends Component {
                         </p>
                     </article>
 
-                    <form style={(this.state.IsDetailsOpen)? {display: 'flex'}:{display: 'none'}} 
+                    <form style={(this.state.IsDetailsOpen)? {display:'flex'}:{display:'none'}} 
                         action="/" method="post" className="box-update-details">
                         <div>
                             <figure>
@@ -99,7 +103,7 @@ class ClientsCard extends Component {
                             </figure>
                             <h4>Tipo:</h4>
 
-                            {this.selectClientType(clients.type, clients.id)}
+                            {this.formatClientType(clients.type, clients.id)}
 
                             <button type="button" 
                                 className="btn-send-verification-code">Enviar codigo</button>
@@ -119,8 +123,10 @@ class ClientsCard extends Component {
                                 <input type="password" defaultValue={clients.password} />
                             </article>
                             <article>
-                                <input type="text" style={{width: '10%'}} defaultValue={clients.streetNumber} />
-                                <input type="text" style={{width: '80%'}} defaultValue={clients.streetName}/>
+                                <input type="text" style={{width: '10%'}} 
+                                    defaultValue={clients.streetNumber} />
+                                <input type="text" style={{width: '80%'}} 
+                                    defaultValue={clients.streetName}/>
                                 <select name="" id={'hood'+clients.id}>
                                     <option defaultValue="">{clients.hood}</option>
                                 </select>
@@ -138,22 +144,30 @@ class ClientsCard extends Component {
                         <div>
                             
                             <select name="" id={'gender'+clients.id}>
-                                <option defaultValue="">{clients.gender === 'F'? 'Mujer':'Hombre'}</option>
-                                <option defaultValue="">{clients.gender === 'F'? 'Hombre':'Mujer'}</option>
+                                <option defaultValue="">
+                                    {clients.gender === 'F'? 'Mujer':'Hombre'}
+                                </option>
+                                <option defaultValue="">
+                                    {clients.gender === 'F'? 'Hombre':'Mujer'}
+                                </option>
                             </select>  
 
                             <h4>Estado:</h4>
                             <label htmlFor={'connected-status'+clients.id}>
-                                <input type="radio" name={'status'+clients.id} id={'connected-status'+clients.id} defaultChecked /> Conectado
+                                <input type="radio" name={'status'+clients.id} 
+                                    id={'connected-status'+clients.id} defaultChecked /> Conectado
                             </label>
                             <label htmlFor={'suspended-status'+clients.id}>
-                                <input type="radio" name={'status'+clients.id} id={'suspended-status'+clients.id} /> Suspendido
+                                <input type="radio" name={'status'+clients.id} 
+                                    id={'suspended-status'+clients.id} /> Suspendido
                             </label>
                             <label htmlFor={"offline-status"+clients.id}>
-                                <input type="radio" name={'status'+clients.id} id={"offline-status"+clients.id} /> Fuera de linea
+                                <input type="radio" name={'status'+clients.id} 
+                                    id={"offline-status"+clients.id} /> Fuera de linea
                             </label>
                             <label htmlFor={'retired-status'+clients.id}>
-                                <input type="radio" name={'status'+clients.id} id={'retired-status'+clients.id} /> Retirados
+                                <input type="radio" name={'status'+clients.id} 
+                                    id={'retired-status'+clients.id} /> Retirados
                             </label>
                         </div>
 
