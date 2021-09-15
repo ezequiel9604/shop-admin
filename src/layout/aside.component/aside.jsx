@@ -68,7 +68,7 @@ class Aside extends Component {
                         className="sidebar-panel">
                         <Link to="/" className="sidebar-panel-links">Pedido</Link>
                         <Link to="/clients" className="sidebar-panel-links">Usuario</Link>
-                        <Link to="/" className="sidebar-panel-links">Inventario</Link>
+                        <Link to="/inventory" className="sidebar-panel-links">Inventario</Link>
                         <Link to="/" className="sidebar-panel-links">Comentario</Link>
                     </ul>
 

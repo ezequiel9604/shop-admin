@@ -10,7 +10,7 @@ class FilterClients extends Component {
         super(props);
 
         this.state = { 
-            IsFilter2Open: false
+            isFilter2Open: false
         }
 
         this.switchFilter2Open = this.switchFilter2Open.bind(this);
@@ -18,13 +18,13 @@ class FilterClients extends Component {
 
     switchFilter2Open(){
         this.setState((state)=> ({
-            IsFilter2Open: !state.IsFilter2Open
+            isFilter2Open: !state.isFilter2Open
         }));
     }
 
     render() { 
 
-        const {IsFilter2Open} = this.state;
+        const {isFilter2Open} = this.state;
 
         return (  
             <div className="box-container">
@@ -46,11 +46,11 @@ class FilterClients extends Component {
                     <button onClick={this.switchFilter2Open} id="btn-filter-advance">
                         Opciones avanzadas
                         <span className="material-icons-outlined">
-                            {(IsFilter2Open)? 'expand_less':'expand_more'}
+                            {(isFilter2Open)? 'expand_less':'expand_more'}
                         </span>
                     </button>
 
-                    <div style={(IsFilter2Open)? {display:'flex'}:{display:'none'}}
+                    <div style={(isFilter2Open)? {display:'flex'}:{display:'none'}}
                         className="filter-2">
                         <div>
                             <h4>Genero:</h4>

@@ -1,0 +1,243 @@
+
+div.filter-2 div{
+	width: 16%;
+}
+
+
+div.box-table-invetory .box-table-head label:nth-child(1){
+	width: 20%;
+}
+div.box-table-invetory .box-table-head label:nth-child(2){
+	width: 45%;
+}
+div.box-table-invetory .box-table-head label:nth-child(3){
+	width: 10%;
+}
+div.box-table-invetory .box-table-head label:nth-child(4){
+	width: 10%;
+}
+div.box-table-invetory .box-table-head label:nth-child(5){
+	width: 10%;
+}
+
+
+div.box-table-body-inventory article p:nth-child(1){
+	width: 20%;
+}
+div.box-table-body-inventory article p:nth-child(2){
+	width: 45%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+	display: -moz-box;
+    -moz-line-clamp: 1;
+    -moz-box-orient: vertical;
+	display: -ms-box;
+    -ms-line-clamp: 1;
+    -ms-box-orient: vertical;
+    overflow: hidden;
+}
+div.box-table-body-inventory article p:nth-child(3){
+	width: 10%;
+}
+div.box-table-body-inventory article p:nth-child(4){
+	width: 10%;
+}
+div.box-table-body-inventory article p:nth-child(5){
+	width: 10%;
+	display: flex;
+	justify-content: center;
+}
+
+form.box-update-details-inventory > div:nth-child(1){
+	width: 15%;	
+}
+form.box-update-details-inventory > div:nth-child(2){
+	width: 60%;	
+}
+form.box-update-details-inventory > div:nth-child(3){
+	width: 20%;	
+}
+
+form.box-update-details-inventory > div figure{
+	border: 1px solid #dddddd;
+	width: 90px;
+	height: 80px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+	display: flex;
+	scroll-behavior: smooth;
+	overflow: auto;
+	-ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+
+form.box-update-details-inventory > div figure::-webkit-scrollbar{
+	display: none;
+}
+
+form.box-update-details-inventory > div figure img{
+	width: inherit;
+	height: inherit;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: space-between;
+	object-fit: contain;
+
+	overflow-x: auto;
+}
+
+form.box-update-details-inventory > div figcaption{
+	/*border: 1px solid;*/
+	width: 80%;
+	margin: 5px auto;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+form.box-update-details-inventory > div figcaption cite{
+	width: fit-content;
+
+	line-height: 40px;
+	font-size: 13px;
+	font-family: "raleway-regular", sans-serif;
+	color: #4d4d4d;
+}
+
+form.box-update-details-inventory > div figcaption button{
+	border: 1px solid #cccccc;
+	width: 20%;
+	border-radius: 2px;
+	display: flex;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+
+form.box-update-details-inventory > div figcaption span{
+	font-size: 20px;
+	color: #808080;
+}
+
+form.box-update-details-inventory > div h4,
+form.box-update-details-inventory > div label{
+	/*border: 1px solid;*/
+	display: block;
+	width: 70%;
+	margin: 12px auto;
+
+	font-size: 13px;
+	font-family: "raleway-medium", sans-serif;
+	color: #808080;
+}
+
+form.box-update-details-inventory > div select{
+	display: block;
+	width: 70%;
+	margin: 10px auto;
+}
+
+form.box-update-details-inventory > div article{
+	border: 1px solid transparent;
+	width: 100%;	
+	
+	display: flex;
+	flex-wrap: wrap;
+}
+
+form.box-update-details-inventory > div article input,
+form.box-update-details-inventory > div article select{
+	display: inline-block;
+
+	width: 45%;
+
+	margin: 5px auto;
+	border-radius: 2px;
+}
+
+form.box-update-details-inventory > div article button{
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	background-color: #f2f2f2;
+}
+
+form.box-update-details-inventory > div article textarea{
+	display: inline-block;
+	width: 94%;
+	height: 70px;
+
+	margin: 5px auto;
+}
+
+div.box-inside-table-head label:nth-child(1){
+	width: 14%;
+}
+div.box-inside-table-head label:nth-child(2){
+	width: 14%;
+}
+div.box-inside-table-head label:nth-child(3){
+	width: 14%;
+}
+div.box-inside-table-head label:nth-child(4){
+	width: 14%;
+}
+div.box-inside-table-head label:nth-child(5){
+	width: 14%;
+}
+div.box-inside-table-head label:nth-child(6){
+	width: 14%;
+}
+div.box-inside-table-head label:nth-child(7){
+	width: 14%;
+}
+
+
+div.box-inside-table-body article p:nth-child(1){
+	width: 14%;
+}
+div.box-inside-table-body article p:nth-child(2){
+	width: 14%;
+}
+div.box-inside-table-body article p:nth-child(3){
+	width: 14%;
+}
+div.box-inside-table-body article p:nth-child(4){
+	width: 14%;
+}
+div.box-inside-table-body article p:nth-child(5){
+	width: 14%;
+}
+div.box-inside-table-body article p:nth-child(6){
+	width: 14%;
+}
+div.box-inside-table-body article p:nth-child(7){
+	width: 14%;
+}
+
+
+div.box-inside-table-body article p select,
+div.box-inside-table-body article p input{
+	width: 95%;
+}
+
+
+div.box-inside-table-footer{
+	/*border: 1px solid;*/
+	width: 90%;
+	margin: 5px auto;
+
+	display: flex;
+	justify-content:space-around;
+}
+
+div.box-inside-table-footer button{
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	background-color: #f2f2f2;
+}

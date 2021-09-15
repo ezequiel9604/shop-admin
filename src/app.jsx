@@ -11,6 +11,7 @@ import Notification from './layout/notification.component/Notification';
 import Home from './page/home.component/Home';
 import Client from './page/client.component/Client';
 import Profile from './page/profile.component/Profile';
+import Inventory from './page/inventory.component/Inventory';
 
 
 class App extends Component {
@@ -152,6 +153,39 @@ class App extends Component {
                                     
                                     <div className="ctn">
                                         <Profile />
+                                    </div>
+
+                                </main>
+
+                            </div>
+
+                            {(this.state.IsNotificationOpen) && 
+                            <Notification notifications={Notifications} 
+                                onRemoveNotification={this.removeNotificationHandler}
+                                onIsNotificationOpen={this.switchNotificationHandler} /> }	
+
+                        </div>  
+                    );
+
+                }} />
+
+                <Route path={'/inventory'} render={() => {
+                    
+                    return ( <div id="outside-container">
+
+                            <Aside isSideBarOpen={IsSideBarOpen} /> 
+
+                            <div id="inside-container" 
+                                style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
+                                
+                                <Header onIsSidebarOpen={this.switchSideBarHandler} 
+                                    onNotificationAmount={Notifications.length}
+                                    onIsNotificationOpen={this.switchNotificationHandler} />
+
+                                <main style={(IsSideBarOpen)? {width: '82%', left:'18%'}: null}>
+                                    
+                                    <div className="ctn">
+                                        <Inventory />
                                     </div>
 
                                 </main>
