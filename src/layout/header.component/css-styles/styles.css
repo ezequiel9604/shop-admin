@@ -14,7 +14,7 @@ header#main-header{
 	top: 0;
 
 	background-color: #ffffff;
-	z-index: 10;
+	z-index: 20;
 }
 
 div.logo-container{

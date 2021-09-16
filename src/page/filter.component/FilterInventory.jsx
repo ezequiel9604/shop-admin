@@ -28,7 +28,9 @@ function FilterInventory(props) {
 
         <button onClick={switchFilter2Open} id="btn-filter-advance">
           Opciones avanzadas
-          <span className="material-icons-outlined">expand_more</span>
+          <span className="material-icons-outlined">
+            {(isFilter2Open)?'expand_less':'expand_more'}
+          </span>
         </button>
 
         <div

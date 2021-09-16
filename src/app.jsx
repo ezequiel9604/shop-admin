@@ -7,6 +7,7 @@ import './css/general_styles.css';
 import Header from './layout/header.component/Header';
 import Aside from './layout/aside.component/Aside';
 import Notification from './layout/notification.component/Notification';
+import ChatSidebar from './layout/chatSidebar.componet/ChatSidebar';
 
 import Home from './page/home.component/Home';
 import Client from './page/client.component/Client';
@@ -88,7 +89,7 @@ class App extends Component {
                                     <div className="ctn">
                                         <Home />
                                     </div>
-
+                                    <ChatSidebar />
                                 </main>
     
                             </div>
@@ -121,7 +122,7 @@ class App extends Component {
                                     <div className="ctn">
                                         <Client />
                                     </div>
-
+                                    <ChatSidebar />
                                 </main>
 
                             </div>
