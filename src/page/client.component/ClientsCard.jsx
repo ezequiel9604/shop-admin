@@ -70,7 +70,7 @@ class ClientsCard extends Component {
         const {clients} = this.props;
 
         return (  
-            <div className="box-table-body">
+            <div className="box-table-body box-table-body-client">
 
                 <div>
                     <article>
@@ -92,7 +92,7 @@ class ClientsCard extends Component {
                     </article>
 
                     <form style={(this.state.IsDetailsOpen)? {display:'flex'}:{display:'none'}} 
-                        action="/" method="post" className="box-update-details">
+                        action="/" method="post" className="box-update-details box-update-details-client">
                         <div>
                             <figure>
                                 <img src={clients.image} alt='' />

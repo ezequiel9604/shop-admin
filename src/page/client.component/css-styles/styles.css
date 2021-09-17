@@ -1,58 +1,58 @@
 
 
-div.box-table-head label:nth-child(1){
+div.box-table-client .box-table-head label:nth-child(1){
 	width: 20%;
 }
-div.box-table-head label:nth-child(2){
+div.box-table-client .box-table-head label:nth-child(2){
 	width: 20%;
 }
-div.box-table-head label:nth-child(3){
+div.box-table-client .box-table-head label:nth-child(3){
 	width: 25%;
 }
-div.box-table-head label:nth-child(4){
+div.box-table-client .box-table-head label:nth-child(4){
 	width: 10%;
 }
-div.box-table-head label:nth-child(5){
+div.box-table-client .box-table-head label:nth-child(5){
 	width: 10%;
 }
-div.box-table-head label:nth-child(6){
+div.box-table-client .box-table-head label:nth-child(6){
 	width: 10%;
 }
 
 
-div.box-table-body article p:nth-child(1){
+div.box-table-body-client article p:nth-child(1){
 	width: 20%;
 }
-div.box-table-body article p:nth-child(2){
+div.box-table-body-client article p:nth-child(2){
 	width: 20%;
 }
-div.box-table-body article p:nth-child(3){
+div.box-table-body-client article p:nth-child(3){
 	width: 25%;
 }
-div.box-table-body article p:nth-child(4){
+div.box-table-body-client article p:nth-child(4){
 	width: 10%;
 }
-div.box-table-body article p:nth-child(5){
+div.box-table-body-client article p:nth-child(5){
 	width: 10%;
 }
-div.box-table-body article p:nth-child(6){
+div.box-table-body-client article p:nth-child(6){
 	width: 10%;
 	display: flex;
 	justify-content: center;
 }
 
 
-form.box-update-details > div:nth-child(1){
+form.box-update-details-client > div:nth-child(1){
 	width: 15%;	
 }
-form.box-update-details > div:nth-child(2){
+form.box-update-details-client > div:nth-child(2){
 	width: 60%;	
 }
-form.box-update-details > div:nth-child(3){
+form.box-update-details-client > div:nth-child(3){
 	width: 20%;	
 }
 
-form.box-update-details > div figure{
+form.box-update-details-client > div figure{
 	/*border: 1px solid blue;*/
 	width: 100px;
 	height: 80px;
@@ -60,7 +60,7 @@ form.box-update-details > div figure{
 	position: relative;
 }
 
-form.box-update-details > div figure img{
+form.box-update-details-client > div figure img{
 	width: 100%;
 	height: 100%;
 
@@ -68,7 +68,7 @@ form.box-update-details > div figure img{
 	object-fit: cover;
 }
 
-form.box-update-details > div figure label{
+form.box-update-details-client > div figure label{
 	display: flex;
 	/*border: 1px solid;*/
 	width: fit-content;
@@ -80,18 +80,18 @@ form.box-update-details > div figure label{
 	cursor: pointer;
 }
 
-form.box-update-details > div figure label input{
+form.box-update-details-client > div figure label input{
 	width: 0;
 	height: 0;
 }
 
-form.box-update-details > div figure label span{
+form.box-update-details-client > div figure label span{
 	font-size: 20px;
 	color: #808080;
 }
 
-form.box-update-details > div h4,
-form.box-update-details > div label{
+form.box-update-details-client > div h4,
+form.box-update-details-client > div label{
 	/*border: 1px solid;*/
 	display: block;
 	width: 70%;
@@ -102,14 +102,14 @@ form.box-update-details > div label{
 	color: #808080;
 }
 
-form.box-update-details > div select{
+form.box-update-details-client > div select{
 	display: block;
 	width: 70%;
 	margin: 10px auto;
 }
 
 
-form.box-update-details > div article{
+form.box-update-details-client > div article{
 	border: 1px solid transparent;
 	width: 100%;	
 	
@@ -117,15 +117,15 @@ form.box-update-details > div article{
 	flex-wrap: wrap;
 }
 
-form.box-update-details > div article input,
-form.box-update-details > div article select{
+form.box-update-details-client > div article input,
+form.box-update-details-client > div article select{
 	display: inline-block;
 
 	width: 45%;
 	margin: 5px auto;
 }
 
-form.box-update-details > div article button{
+form.box-update-details-client > div article button{
 	width: fit-content;
 	display: flex;
 	justify-content: center;

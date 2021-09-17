@@ -1,0 +1,141 @@
+
+div.box-table-comment .box-table-head label:nth-child(1){
+	width: 20%;
+}
+div.box-table-comment .box-table-head label:nth-child(2){
+	width: 20%;
+}
+div.box-table-comment .box-table-head label:nth-child(3){
+	width: 25%;
+}
+div.box-table-comment .box-table-head label:nth-child(4){
+	width: 10%;
+}
+div.box-table-comment .box-table-head label:nth-child(5){
+	width: 10%;
+}
+div.box-table-comment .box-table-head label:nth-child(6){
+	width: 10%;
+}
+
+
+div.box-table-body-comment article p:nth-child(1){
+	width: 20%;
+}
+div.box-table-body-comment article p:nth-child(2){
+	width: 20%;
+}
+div.box-table-body-comment article p:nth-child(3){
+	width: 25%;
+}
+div.box-table-body-comment article p:nth-child(4){
+	width: 10%;
+}
+div.box-table-body-comment article p:nth-child(5){
+	width: 10%;
+}
+div.box-table-body-comment article p:nth-child(6){
+	width: 10%;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+
+form.box-update-details-comment > div:nth-child(1){
+	width: 70%;	
+}
+form.box-update-details-comment > div:nth-child(2){
+	width: 20%;	
+}
+
+form.box-update-details-comment > div figure{
+	/*border: 1px solid blue;*/
+	width: 100px;
+	height: 80px;
+	margin: 10px auto;
+	position: relative;
+}
+
+form.box-update-details-comment > div figure img{
+	width: 100%;
+	height: 100%;
+
+	border-radius: 4px;
+	object-fit: cover;
+}
+
+form.box-update-details-comment > div figure label{
+	display: flex;
+	/*border: 1px solid;*/
+	width: fit-content;
+	position: absolute;
+	top: 0;
+	left: -24px;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+form.box-update-details-comment > div figure label input{
+	width: 0;
+	height: 0;
+}
+
+form.box-update-details-comment > div figure label span{
+	font-size: 20px;
+	color: #808080;
+}
+
+form.box-update-details-comment > div h4,
+form.box-update-details-comment > div label{
+	/*border: 1px solid;*/
+	display: block;
+	width: 70%;
+	margin: 12px auto;
+
+	font-size: 13px;
+	font-family: "raleway-medium";
+	color: #808080;
+}
+
+form.box-update-details-comment > div select{
+	display: block;
+	width: 70%;
+	margin: 10px auto;
+}
+
+form.box-update-details-comment > div article{
+	border: 1px solid transparent;
+	width: 100%;	
+	
+	display: flex;
+	flex-wrap: wrap;
+}
+
+form.box-update-details-comment > div article input,
+form.box-update-details-comment > div article select{
+	display: inline-block;
+
+	width: 45%;
+
+	border: 1px solid #dddddd;
+
+	margin: 5px auto;
+}
+
+form.box-update-details-comment > div article button{
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	background-color: #f2f2f2;
+}
+
+form.box-update-details-comment > div article textarea{
+	display: inline-block;
+	width: 94%;
+	height: 70px;
+
+	margin: 5px auto;
+}

@@ -64,9 +64,9 @@ class Client extends Component {
 
                 <div className="box-container">
                 
-                    <div className="box box-table">
+                    <div className="box box-table box-table-client">
                             
-                        <div className="box-table-head">
+                        <div className="box-table-head ">
                             <label>Imagen / Codigo</label>
                             <label>Nombre</label>
                             <label>Email</label>

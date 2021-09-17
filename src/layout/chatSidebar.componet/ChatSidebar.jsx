@@ -4,6 +4,7 @@ import "./css-styles/styles.css";
 
 import WomanAvatar from "../../images/placeholder-woman.png";
 import ManAvatar from "../../images/placeholder-woman.png";
+import UserImage from '../../images/user-image.jpg';
 
 class ChatSidebar extends Component {
   constructor(props) {
@@ -13,27 +14,27 @@ class ChatSidebar extends Component {
       clientsToTalk: [
         {
           id: "USR-025789",
-          image: WomanAvatar,
+          image: UserImage,
           name: "Natalie Portman",
           status: "c",
           unReadMessage: 2,
         },
         {
-          id: "USR-025789",
+          id: "USR-025147",
           image: ManAvatar,
           name: "Will Smith",
           status: "s",
           unReadMessage: 3,
         },
         {
-          id: "USR-025789",
+          id: "USR-025100",
           image: WomanAvatar,
           name: "Scarlet Johanson",
           status: "f",
           unReadMessage: 1,
         },
         {
-          id: "USR-025789",
+          id: "USR-025371",
           image: ManAvatar,
           name: "Morgan Freeman",
           status: "c",
@@ -111,7 +112,7 @@ class ChatSidebar extends Component {
           <div className="usrs-to-talk-container">
             {clientsToTalk.map((current, ind) => {
               return (
-                <div className="usr-to-talk">
+                <div className="usr-to-talk" key={current.id}>
                   <label className="usr-name">{current.name}</label>
                   <figure onClick={()=>this.changeSelectedClientHandler(ind)}>
                     {current.unReadMessage > 0 ? (
