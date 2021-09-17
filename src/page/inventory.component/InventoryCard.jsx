@@ -58,8 +58,6 @@ function InventoryCard(props) {
       </article>
       <form
         style={isDetailsOpen ? { display: "flex" } : { display: "none" }}
-        action=""
-        method=""
         className="box-update-details box-update-details-inventory"
       >
         <div>

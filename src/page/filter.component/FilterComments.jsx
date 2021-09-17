@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import "./css-styles/styles.css";
+
+
 function FilterComments(props) {
   const [isFilter2Open, setFilter2Open] = useState(false);
 

@@ -10,6 +10,7 @@ import Client from "./page/client.component/Client";
 import Profile from "./page/profile.component/Profile";
 import Inventory from "./page/inventory.component/Inventory";
 import Comment from "./page/comment.component/Comment";
+import Order from "./page/order.component/Order";
 
 function App(props) {
   return (
@@ -35,6 +36,12 @@ function App(props) {
       <Route path="/comments">
         <Layout>
           <Comment />
+        </Layout>
+      </Route>
+
+      <Route path="/orders">
+        <Layout>
+          <Order />
         </Layout>
       </Route>
 

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./css-styles/styles.css";
+
+
 function FilterInventory(props) {
   const brands = ["brand 1","brand 2","brand 3","brand 4","brand 5","brand 6"];
   const departments = ["Tecnologia", "Ferreteria", "Ropa", "Calzado", "Hogar"];
