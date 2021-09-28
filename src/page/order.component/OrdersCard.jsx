@@ -8,21 +8,21 @@ function OrdersCard(props) {
   }
 
   function formatOrderStatus(status) {
-    if (status === "r") {
+    if (status === "received") {
       return <mark className="box-table-success">Recibido</mark>;
-    } else if (status === "d") {
+    } else if (status === "leaving") {
       return <mark className="box-table-warning">De salida</mark>;
-    } else if (status === "e") {
+    } else if (status === "onitsway") {
       return <mark className="box-table-secundary">En camino</mark>;
-    } else if (status === "er") {
+    } else if (status === "paymenterror") {
       return <mark className="box-table-error">Error de pago</mark>;
-    } else if (status === "c") {
+    } else if (status === "canceled") {
       return <mark className="box-table-cancel">Cancelado</mark>;
     }
   }
 
   function formatOrderType(type, id) {
-    if (type === "n") {
+    if (type === "normal") {
       return (
         <React.Fragment>
           <label htmlFor={"normal-type" + id}>
@@ -40,7 +40,7 @@ function OrdersCard(props) {
           </label>
         </React.Fragment>
       );
-    } else if (type === "e") {
+    } else if (type === "express") {
       return (
         <React.Fragment>
           <label htmlFor={"normal-type" + id}>
@@ -62,11 +62,11 @@ function OrdersCard(props) {
   }
 
   function formatOrderShipping(shipping) {
-    if (shipping === "r") {
+    if (shipping === "regular") {
       return "Regular";
-    } else if (shipping === "f") {
+    } else if (shipping === "fast") {
       return "Rapido";
-    } else if (shipping === "fr") {
+    } else if (shipping === "free") {
       return "Gratis";
     }
   }
@@ -202,7 +202,7 @@ function OrdersCard(props) {
         <div className="box-inside-table-body box-inside-table-body-order">
           {order.items.map((current) => {
             return (
-              <article>
+              <article key={current.id}>
                 <p>
                   <img src={current.image} alt="" />
                   {current.id}

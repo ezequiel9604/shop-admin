@@ -70,7 +70,9 @@ class Layout extends Component {
           />
 
           <main style={isSideBarOpen ? { width: "82%", left: "18%" } : null}>
-            <div className="ctn">{this.props.children}</div>
+            <div className="ctn">
+              {this.props.children}
+            </div>
 
             <ChatSidebar />
           </main>

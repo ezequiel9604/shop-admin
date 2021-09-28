@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Filter from "./Filter";
 
 import "./css-styles/styles.css";
 
@@ -8,36 +8,25 @@ function FilterInventory(props) {
   const brands = ["brand 1","brand 2","brand 3","brand 4","brand 5","brand 6"];
   const departments = ["Tecnologia", "Ferreteria", "Ropa", "Calzado", "Hogar"];
 
-  const [isFilter2Open, setFilter2Open] = useState(false);
+  const [isFilterOpen, setFilterOpen] = useState(false);
 
-  function switchFilter2Open(){
-      setFilter2Open(!isFilter2Open);
+  function filterOpenHandler(){
+      setFilterOpen(!isFilterOpen);
   }
 
   return (
     <div className="box-container">
       <div className="box box-filter">
-        <div className="filter-1">
-          <div>
-            <select name="" id="">
-              <option defaultValue="">Codigo</option>
-              <option defaultValue="">Titulo</option>
-            </select>
-            <input type="text" placeholder="Codigo, Titulo ..." />
-            <button type="button">Buscar</button>
-          </div>
-          <Link to="/addItem">+ Agregar articulo</Link>
-        </div>
-
-        <button onClick={switchFilter2Open} id="btn-filter-advance">
-          Opciones avanzadas
-          <span className="material-icons-outlined">
-            {(isFilter2Open)?'expand_less':'expand_more'}
-          </span>
-        </button>
+        
+        <Filter
+          type={"product"}
+          options={["Codigo", "Titulo"]}
+          onFilterOpen={filterOpenHandler}
+          onIsFilterOpen={isFilterOpen}
+        />
 
         <div
-          style={isFilter2Open ? { display: "flex" } : { display: "none" }}
+          style={isFilterOpen ? { display: "flex" } : { display: "none" }}
           className="filter-2"
         >
           <div>

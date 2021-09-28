@@ -20,18 +20,18 @@ class Order extends Component {
       orders: [
         {
           id: "ORD-025456",
-          shippingMethod: "r",
-          type: "n",
+          shippingMethod: "regular",
+          type: "normal",
           shippingCost: 100,
           total: 4270,
           descount: 150,
-          status: "r",
+          status: "leaving",
           orderDate: "2021-05-01",
           shippingDate: "2021-05-02",
 
           client: {
             id: "USR-025479",
-            name: 'Sarah Doe',
+            name: "Sarah Doe",
             phone: "809-111-0000",
             email: "sarahdoe@gmail.com",
             streetNumber: "8",
@@ -51,7 +51,7 @@ class Order extends Component {
               color: "black",
               size: '17"',
               capacity: "2GBs",
-              condition: 'Ninguna'
+              condition: "Ninguna",
             },
             {
               id: "ART-025104",
@@ -62,24 +62,24 @@ class Order extends Component {
               color: "blue",
               size: '24"',
               capacity: "2GBs",
-              condition: 'En devolucion'
+              condition: "En devolucion",
             },
           ],
         },
         {
           id: "ORD-025703",
-          shippingMethod: "f",
-          type: "e",
+          shippingMethod: "fast",
+          type: "express",
           shippingCost: 150,
           total: 1400,
           descount: 150,
-          status: "d",
+          status: "received",
           orderDate: "2021-05-01",
           shippingDate: "2021-05-02",
 
           client: {
             id: "USR-025149",
-            name: 'John Doe',
+            name: "John Doe",
             phone: "809-111-0000",
             email: "johndoe@gmail.com",
             streetNumber: "8",
@@ -99,12 +99,99 @@ class Order extends Component {
               color: "black",
               size: '17"',
               capacity: "2GBs",
-              condition: 'Ninguna'
+              condition: "Ninguna",
             },
           ],
         },
       ],
+      dataToFilter: null,
     };
+
+    this.getItems = this.getItems.bind(this);
+    this.searchDataToFilter = this.searchDataToFilter.bind(this);
+  }
+
+  searchDataToFilter(data) {
+    this.setState({ dataToFilter: data });
+  }
+
+  filterSelectedItem(item, data) {
+    let chosen = item;
+
+    if (data.status) {
+      chosen = item.status === data.status ? item : null;
+
+      if (!chosen) return null;
+
+      if (data.shipping) {
+        chosen = item.shippingMethod === data.shipping ? item : null;
+      }
+
+      if (!chosen) return null;
+
+      if (data.type) {
+        chosen = item.type === data.type ? item : null;
+      }
+
+      if (!chosen) return null;
+    }
+    if (data.shipping) {
+      chosen = item.shippingMethod === data.shipping ? item : null;
+      if (!chosen) return null;
+      if (data.type) {
+        chosen = item.type === data.type ? item : null;
+      }
+      if (!chosen) return null;
+    }
+    if (data.type) {
+      chosen = item.type === data.type ? item : null;
+    }
+
+    if (!chosen) return null;
+
+    return chosen;
+  }
+
+  getItems() {
+    console.log(this.state.dataToFilter);
+
+    const { dataToFilter } = this.state;
+    const { orders } = this.state;
+
+    if (dataToFilter) {
+      const arr = orders.filter((current) => {
+        switch (dataToFilter.option) {
+          case "Codigo":
+            if (dataToFilter.search !== "") {
+              if (dataToFilter.search === current.id) {
+                return this.filterSelectedItem(current, dataToFilter);
+              }
+
+              return null;
+            } else {
+              return this.filterSelectedItem(current, dataToFilter);
+            }
+
+          case "Email":
+            if (dataToFilter.search !== "") {
+              if (dataToFilter.search === current.client.email) {
+                return this.filterSelectedItem(current, dataToFilter);
+              }
+
+              return null;
+            } else {
+              return this.filterSelectedItem(current, dataToFilter);
+            }
+
+          default:
+            return current;
+        }
+      });
+
+      return arr;
+    }
+
+    return orders;
   }
 
   render() {
@@ -116,7 +203,7 @@ class Order extends Component {
           </div>
         </div>
 
-        <FilterOrders />
+        <FilterOrders onSearchDataToFilter={this.searchDataToFilter} />
 
         <div className="box-container">
           <div className="box box-table box-table-order">
@@ -129,10 +216,9 @@ class Order extends Component {
               <label>Detalles</label>
             </div>
 
-            {this.state.orders.map((current)=> {
-                return <OrdersCard order={current} key={current.id} />
+            {this.getItems().map((current) => {
+              return <OrdersCard order={current} key={current.id} />;
             })}
-
           </div>
         </div>
       </div>
