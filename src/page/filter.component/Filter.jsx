@@ -35,7 +35,6 @@ function Filter(props) {
     }
   }
 
-
   return (
     <Fragment>
       <div className="filter-1">
@@ -52,7 +51,7 @@ function Filter(props) {
           <input
             defaultValue={textInput}
             onChange={changeTextInput}
-            type="text"
+            type="search"
             placeholder={props.options.join(", ") + "..."}
           />
           <button onClick={searchDataHandler} type="button">

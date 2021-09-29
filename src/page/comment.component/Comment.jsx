@@ -21,7 +21,7 @@ class Comment extends Component {
           postedDate: "2021-05-10",
           client: "USR-025789",
           item: "ART-025122",
-          status: "v",
+          status: "visible",
           text: tlt,
         },
         {
@@ -29,7 +29,7 @@ class Comment extends Component {
           postedDate: "2021-05-16",
           client: "USR-025903",
           item: "ART-025741",
-          status: "n",
+          status: "unvisible",
           text: tlt,
         },
         {
@@ -37,11 +37,74 @@ class Comment extends Component {
           postedDate: "2021-05-19",
           client: "USR-025402",
           item: "ART-025714",
-          status: "v",
+          status: "visible",
           text: tlt,
         },
       ],
+
+      dataToFilter: null,
     };
+
+    this.searchDataToFilter = this.searchDataToFilter.bind(this);
+    this.getItems = this.getItems.bind(this);
+  }
+
+  searchDataToFilter(data) {
+    this.setState({ dataToFilter: data });
+  }
+
+  filterSelectedItem(item, data) {
+    let chosen = item;
+
+    if (data.status) {
+      chosen = item.status === data.status ? item : null;
+    }
+
+    if (!chosen) return null;
+
+    return chosen;
+  }
+
+  getItems() {
+    console.log(this.state.dataToFilter);
+
+    const { dataToFilter } = this.state;
+    const { comments } = this.state;
+
+    if (dataToFilter) {
+      const arr = comments.filter((current) => {
+        switch (dataToFilter.option) {
+          case "Codigo":
+            if (dataToFilter.search !== "") {
+              if (dataToFilter.search === current.id) {
+                return this.filterSelectedItem(current, dataToFilter);
+              }
+
+              return null;
+            } else {
+              return this.filterSelectedItem(current, dataToFilter);
+            }
+
+          case "Usuario":
+            if (dataToFilter.search !== "") {
+              if (dataToFilter.search === current.client) {
+                return this.filterSelectedItem(current, dataToFilter);
+              }
+
+              return null;
+            } else {
+              return this.filterSelectedItem(current, dataToFilter);
+            }
+
+          default:
+            return current;
+        }
+      });
+
+      return arr;
+    }
+
+    return comments;
   }
 
   render() {
@@ -53,7 +116,7 @@ class Comment extends Component {
           </div>
         </div>
 
-        <FilterComments />
+        <FilterComments onSearchDataToFilter={this.searchDataToFilter} />
 
         <div className="box-container">
           <div className="box box-table box-table-comment">
@@ -66,7 +129,7 @@ class Comment extends Component {
               <label>Detalles</label>
             </div>
 
-            {this.state.comments.map((current) => {
+            {this.getItems().map((current) => {
               return <CommentsCard comments={current} key={current.id} />;
             })}
           </div>

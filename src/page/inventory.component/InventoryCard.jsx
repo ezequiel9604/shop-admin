@@ -9,13 +9,13 @@ function InventoryCard(props) {
   }
 
   function formatItemStatus(status) {
-    if (status === "n") {
+    if (status === "new") {
       return <mark className="box-table-success">Nuevo</mark>;
-    } else if (status === "u") {
+    } else if (status === "used") {
       return <mark className="box-table-warning">Usado</mark>;
-    } else if (status === "r") {
+    } else if (status === "repair") {
       return <mark className="box-table-cancel">Reparado</mark>;
-    } else if (status === "o") {
+    } else if (status === "hide") {
       return <mark className="box-table-error">Oculto</mark>;
     }
   }
@@ -146,9 +146,9 @@ function InventoryCard(props) {
           <label>Precio oferta</label>
         </div>
 
-        {items.subItems.map((current) => {
+        {items.subItems.map((current, ind) => {
           return (
-            <div className="box-inside-table-body">
+            <div key={ind} className="box-inside-table-body">
               <article>
                 <p>
                   <select name="" id="">

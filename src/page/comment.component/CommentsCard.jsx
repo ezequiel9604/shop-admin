@@ -1,50 +1,65 @@
 import React, { useState } from "react";
 
 function CommentsCard(props) {
+  const [isDetailsOpen, setDetailsOpen] = useState(false);
 
-    const [isDetailsOpen, setDetailsOpen] = useState(false);
+  function switchDetailsOpen() {
+    setDetailsOpen(!isDetailsOpen);
+  }
 
-    function switchDetailsOpen() {
-        setDetailsOpen(!isDetailsOpen);
+  function formatItemStatus(status) {
+    if (status === "visible") {
+      return <mark className="box-table-success">Visible</mark>;
+    } else if (status === "unvisible") {
+      return <mark className="box-table-warning">No visible</mark>;
     }
+  }
 
-    function formatItemStatus(status) {
-        if (status === "v") {
-          return <mark className="box-table-success">Visible</mark>;
-        } else if (status === "n") {
-          return <mark className="box-table-warning">No visible</mark>;
-        }
+  function formatInputStatus(status, id) {
+    if (status === "visible") {
+      return (
+        <React.Fragment>
+          <label htmlFor={"visible-status-" + id}>
+            <input
+              type="radio"
+              name="visibility"
+              id={"visible-status-" + id}
+              defaultChecked
+            />{" "}
+            Visible
+          </label>
+          <label htmlFor={"novisible-status-" + id}>
+            <input
+              type="radio"
+              name="visibility"
+              id={"novisible-status-" + id}
+            />{" "}
+            No visible
+          </label>
+        </React.Fragment>
+      );
+    } else if (status === "unvisible") {
+      return (
+        <React.Fragment>
+          <label htmlFor={"visible-status-" + id}>
+            <input type="radio" name="visibility" id={"visible-status-" + id} />{" "}
+            Visible
+          </label>
+          <label htmlFor={"novisible-status-" + id}>
+            <input
+              type="radio"
+              name="visibility"
+              id={"novisible-status-" + id}
+              defaultChecked
+            />{" "}
+            No visible
+          </label>
+        </React.Fragment>
+      );
     }
+  }
 
-    function formatInputStatus(status, id){
-        if (status === "v") {
-            return (
-                <React.Fragment>
-                    <label htmlFor={"visible-status-"+id}>
-                    <input type="radio" name="visibility" id={"visible-status-"+id}
-                    defaultChecked /> Visible</label>
-                    <label htmlFor={"novisible-status-"+id}>
-                        <input type="radio" name="visibility" 
-                        id={"novisible-status-"+id} /> No visible
-                    </label>
-                </React.Fragment>
-            );
-        } else if (status === "n") {
-            return (
-                <React.Fragment>
-                    <label htmlFor={"visible-status-"+id}>
-                    <input type="radio" name="visibility" id={"visible-status-"+id}
-                     /> Visible</label>
-                    <label htmlFor={"novisible-status-"+id}>
-                        <input type="radio" name="visibility" id={"novisible-status-"+id} 
-                        defaultChecked /> No visible
-                    </label>
-                </React.Fragment>
-            );
-        }
-    }
-
-    const { comments } = props;
+  const { comments } = props;
 
   return (
     <div className="box-table-body box-table-body-comment">
@@ -53,20 +68,23 @@ function CommentsCard(props) {
         <p>{new Date(comments.postedDate).toLocaleDateString()}</p>
         <p>{comments.client}</p>
         <p>{comments.item}</p>
+        <p>{formatItemStatus(comments.status)}</p>
         <p>
-          {formatItemStatus(comments.status)}
-        </p>
-        <p>
-          <button onClick={switchDetailsOpen} 
-            type="button" className="btn-see-details">
+          <button
+            onClick={switchDetailsOpen}
+            type="button"
+            className="btn-see-details"
+          >
             <span className="material-icons-outlined">
-                {(isDetailsOpen)? 'expand_less':'expand_more'}
+              {isDetailsOpen ? "expand_less" : "expand_more"}
             </span>
           </button>
         </p>
       </article>
-      <form style={isDetailsOpen ? { display: "flex" } : { display: "none" }} 
-        className="box-update-details box-update-details-comment">
+      <form
+        style={isDetailsOpen ? { display: "flex" } : { display: "none" }}
+        className="box-update-details box-update-details-comment"
+      >
         <div>
           <article>
             <input type="text" defaultValue={comments.id} disabled />
@@ -93,7 +111,7 @@ function CommentsCard(props) {
 
         <div>
           <h4>Estado:</h4>
-            {formatInputStatus(comments.status, comments.id)}
+          {formatInputStatus(comments.status, comments.id)}
         </div>
       </form>
     </div>

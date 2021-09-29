@@ -17,19 +17,19 @@ class ClientsCard extends Component {
     }
 
     formatClientStatus(status){
-        if(status === 'C'){
+        if(status === 'connected'){
             return <mark className="box-table-success">Conectado</mark>;
-        } else if(status === 'S'){
+        } else if(status === 'suspended'){
             return <mark className="box-table-cancel">Suspendido</mark>;
-        } else if(status === 'F'){
+        } else if(status === 'offline'){
             return <mark className="box-table-warning">Fuera de linea</mark>;
-        }else if(status === 'R'){
+        }else if(status === 'retired'){
             return <mark className="box-table-error">Retirado</mark>;
         }
     }
 
     formatClientType(type, id){
-        if(type === 'N'){
+        if(type === 'normal'){
             return (
                 <React.Fragment>
                     <label htmlFor={'normal-type'+id}>
@@ -79,7 +79,7 @@ class ClientsCard extends Component {
                         </p>
                         <p>{clients.name}</p>
                         <p>{clients.email}</p>
-                        <p>{(clients.gender === 'F')? 'Mujer':'Hombre'}</p>
+                        <p>{(clients.gender === 'female')? 'Mujer':'Hombre'}</p>
                         <p>{this.formatClientStatus(clients.status)}</p>
                         <p>
                             <button onClick={this.switchDetailsStatusHandler} 
@@ -145,10 +145,10 @@ class ClientsCard extends Component {
                             
                             <select name="" id={'gender'+clients.id}>
                                 <option defaultValue="">
-                                    {clients.gender === 'F'? 'Mujer':'Hombre'}
+                                    {clients.gender === 'female'? 'Mujer':'Hombre'}
                                 </option>
                                 <option defaultValue="">
-                                    {clients.gender === 'F'? 'Hombre':'Mujer'}
+                                    {clients.gender === 'female'? 'Hombre':'Mujer'}
                                 </option>
                             </select>  
 

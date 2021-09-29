@@ -61,12 +61,12 @@ class Inventory extends Component {
           image: [SmartTv, SmartTv2, SmartTv3, SmartTv4, SmartTv5],
           title: tlt,
           description: descr,
-          status: "n",
-          gender: "a",
+          status: "new",
+          gender: "all",
           stock: 25,
           quality: 4.8,
-          department: 'Tecnologia',
-          brand: 'Samsung',
+          department: "Tecnologia",
+          brand: "brand 2",
           subItems: [
             {
               size: '24"',
@@ -93,12 +93,12 @@ class Inventory extends Component {
           image: [SmartTv, SmartTv2, SmartTv3, SmartTv4, SmartTv5],
           title: tlt,
           description: descr,
-          status: "u",
-          gender: "a",
+          status: "used",
+          gender: "all",
           stock: 20,
           quality: 4.8,
-          department: 'Tecnologia',
-          brand: 'Samsung',
+          department: "Tecnologia",
+          brand: "brand 4",
           subItems: [
             {
               size: '24"',
@@ -107,7 +107,7 @@ class Inventory extends Component {
               stock: 15,
               purchasedPrice: 1200,
               sellPrice: 1850,
-              offerPrice: 1700,
+              offerPrice: 0,
             },
             {
               size: '17"',
@@ -116,12 +116,215 @@ class Inventory extends Component {
               stock: 5,
               purchasedPrice: 950,
               sellPrice: 1450,
-              offerPrice: 1350,
+              offerPrice: 0,
             },
           ],
-        }
+        },
       ],
+      dataToFilter: null,
     };
+
+    this.searchDataToFilter = this.searchDataToFilter.bind(this);
+    this.getItems = this.getItems.bind(this);
+  }
+
+  searchDataToFilter(data) {
+    this.setState({ dataToFilter: data });
+  }
+
+  filterSelectedItem(item, data) {
+    let chosen = item;
+
+    if (data.brand) {
+      chosen = item.brand === data.brand ? item : null;
+
+      if (!chosen) return null;
+
+      if (data.department) {
+        chosen = item.department === data.department ? item : null;
+      }
+
+      if (!chosen) return null;
+
+      if (data.status) {
+        chosen = item.status === data.status ? item : null;
+      }
+
+      if (!chosen) return null;
+
+      if (data.gender) {
+        chosen = item.gender === data.gender ? item : null;
+      }
+
+      if (!chosen) return null;
+
+      if (data.offer) {
+        for (let i of item.subItems) {
+          if (data.offer === "yes") {
+            chosen = i.offerPrice > 0 ? item : null;
+            break;
+          }
+
+          if (data.offer === "no") {
+            chosen = i.offerPrice <= 0 ? item : null;
+            break;
+          }
+
+          chosen = null;
+        }
+      }
+
+      if (!chosen) return null;
+    }
+
+    if (data.department) {
+      chosen = item.department === data.department ? item : null;
+
+      if (!chosen) return null;
+
+      if (data.status) {
+        chosen = item.status === data.status ? item : null;
+      }
+      if (!chosen) return null;
+
+      if (data.gender) {
+        chosen = item.gender === data.gender ? item : null;
+      }
+
+      if (!chosen) return null;
+
+      if (data.offer) {
+        for (let i of item.subItems) {
+          if (data.offer === "yes") {
+            chosen = i.offerPrice > 0 ? item : null;
+            break;
+          }
+
+          if (data.offer === "no") {
+            chosen = i.offerPrice <= 0 ? item : null;
+            break;
+          }
+
+          chosen = null;
+        }
+      }
+
+      if (!chosen) return null;
+    }
+
+    if (data.status) {
+      chosen = item.status === data.status ? item : null;
+
+      if (!chosen) return null;
+
+      if (data.gender) {
+        chosen = item.gender === data.gender ? item : null;
+      }
+
+      if (!chosen) return null;
+
+      if (data.offer) {
+        for (let i of item.subItems) {
+          if (data.offer === "yes") {
+            chosen = i.offerPrice > 0 ? item : null;
+            break;
+          }
+
+          if (data.offer === "no") {
+            chosen = i.offerPrice <= 0 ? item : null;
+            break;
+          }
+
+          chosen = null;
+        }
+      }
+
+      if (!chosen) return null;
+    }
+
+    if (data.gender) {
+      chosen = item.gender === data.gender ? item : null;
+
+      if (!chosen) return null;
+
+      if (data.offer) {
+        for (let i of item.subItems) {
+          if (data.offer === "yes") {
+            chosen = i.offerPrice > 0 ? item : null;
+            break;
+          }
+
+          if (data.offer === "no") {
+            chosen = i.offerPrice <= 0 ? item : null;
+            break;
+          }
+
+          chosen = null;
+        }
+      }
+
+      if (!chosen) return null;
+    }
+
+    if (data.offer) {
+      for (let i of item.subItems) {
+        if (data.offer === "yes") {
+          chosen = i.offerPrice > 0 ? item : null;
+          break;
+        }
+
+        if (data.offer === "no") {
+          chosen = i.offerPrice <= 0 ? item : null;
+          break;
+        }
+
+        chosen = null;
+      }
+    }
+
+    if (!chosen) return null;
+
+    return chosen;
+  }
+
+  getItems() {
+    const { dataToFilter } = this.state;
+    const { items } = this.state;
+
+    if (dataToFilter) {
+      const arr = items.filter((current) => {
+        switch (dataToFilter.option) {
+          case "Codigo":
+            if (dataToFilter.search !== "") {
+              if (dataToFilter.search === current.id) {
+                return this.filterSelectedItem(current, dataToFilter);
+              }
+
+              return null;
+            } else {
+              return this.filterSelectedItem(current, dataToFilter);
+            }
+
+          case "Titulo":
+            if (dataToFilter.search !== "") {
+              if (dataToFilter.search === current.title) {
+                return this.filterSelectedItem(current, dataToFilter);
+              }
+
+              return null;
+            } else {
+              return this.filterSelectedItem(current, dataToFilter);
+            }
+
+          default:
+            return current;
+        }
+      });
+
+      return arr;
+    }
+
+    return items;
   }
 
   render() {
@@ -133,7 +336,7 @@ class Inventory extends Component {
           </div>
         </div>
 
-        <FilterInventory />
+        <FilterInventory onSearchDataToFilter={this.searchDataToFilter} />
 
         <div className="box-container">
           <div className="box box-table box-table-invetory">
@@ -145,8 +348,8 @@ class Inventory extends Component {
               <label>Detalles</label>
             </div>
 
-            {this.state.items.map((current)=> {
-              return <InventoryCard key={current.id} items={current} />
+            {this.getItems().map((current) => {
+              return <InventoryCard key={current.id} items={current} />;
             })}
           </div>
         </div>

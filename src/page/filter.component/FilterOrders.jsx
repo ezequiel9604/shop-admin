@@ -144,25 +144,7 @@ function FilterOrders(props) {
               Gratis
             </label>
           </div>
-          <div>
-            <h4>Locación:</h4>
-            <label htmlFor="city1-address-1">
-              <input type="radio" name="address-1" id="city1-address-1" />{" "}
-              Ciudad 1
-            </label>
-            <label htmlFor="city2-address-1">
-              <input type="radio" name="address-1" id="city2-address-1" />{" "}
-              Ciudad 2
-            </label>
-            <label htmlFor="city3-address-1">
-              <input type="radio" name="address-1" id="city3-address-1" />{" "}
-              Ciudad 3
-            </label>
-            <label htmlFor="city4-address-1">
-              <input type="radio" name="address-1" id="city4-address-1" />{" "}
-              Ciudad 4
-            </label>
-          </div>
+          
           <div>
             <h4>Tipo:</h4>
             <label htmlFor="normal-type-1">
@@ -184,6 +166,25 @@ function FilterOrders(props) {
                 id="express-type-1"
               />{" "}
               Expreso
+            </label>
+          </div>
+          <div>
+            <h4>Locación:</h4>
+            <label htmlFor="city1-address-1">
+              <input type="radio" name="address-1" id="city1-address-1" />{" "}
+              Ciudad 1
+            </label>
+            <label htmlFor="city2-address-1">
+              <input type="radio" name="address-1" id="city2-address-1" />{" "}
+              Ciudad 2
+            </label>
+            <label htmlFor="city3-address-1">
+              <input type="radio" name="address-1" id="city3-address-1" />{" "}
+              Ciudad 3
+            </label>
+            <label htmlFor="city4-address-1">
+              <input type="radio" name="address-1" id="city4-address-1" />{" "}
+              Ciudad 4
             </label>
           </div>
         </div>
