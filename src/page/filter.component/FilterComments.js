@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Filter from "./Filter";
 
 import "./css-styles/styles.css";
 
 function FilterComments(props) {
   const [isFilterOpen, setFilterOpen] = useState(false);
-
   const [statusInput, setStatusInput] = useState(null);
 
   function changeStatusInput(event) {

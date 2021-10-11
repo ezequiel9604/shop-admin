@@ -5,7 +5,6 @@ import "./css-styles/styles.css";
 
 function FilterOrders(props) {
   const [isFilterOpen, setFilterOpen] = useState(false);
-
   const [statusInput, setStatusInput] = useState(null);
   const [shippingInput, setShippingInput] = useState(null);
   const [typeInput, setTypeInput] = useState(null);
@@ -144,7 +143,7 @@ function FilterOrders(props) {
               Gratis
             </label>
           </div>
-          
+
           <div>
             <h4>Tipo:</h4>
             <label htmlFor="normal-type-1">

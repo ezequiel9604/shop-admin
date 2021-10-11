@@ -1,21 +1,12 @@
-import React, { useState } from "react";
-import Filter from "./Filter";
-
+import { useState } from "react";
 import "./css-styles/styles.css";
+import Filter from "./Filter";
+import { Brands, Departments } from "../../dummyData";
 
 function FilterInventory(props) {
-  const brands = [
-    "brand 1",
-    "brand 2",
-    "brand 3",
-    "brand 4",
-    "brand 5",
-    "brand 6",
-  ];
-  const departments = ["Tecnologia", "Ferreteria", "Ropa", "Calzado", "Hogar"];
-
+  const brands = Brands;
+  const departments = Departments;
   const [isFilterOpen, setFilterOpen] = useState(false);
-
   const [brandInput, setBrandInput] = useState(null);
   const [departmentInput, setDepartmentInput] = useState(null);
   const [statusInput, setStatusInput] = useState(null);

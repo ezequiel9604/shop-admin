@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { Fragment, useState } from "react";
 
 function OrdersCard(props) {
   const [isDetailsOpen, setDetailsOpen] = useState(false);
@@ -24,7 +24,7 @@ function OrdersCard(props) {
   function formatOrderType(type, id) {
     if (type === "normal") {
       return (
-        <React.Fragment>
+        <Fragment>
           <label htmlFor={"normal-type" + id}>
             <input
               type="radio"
@@ -38,11 +38,11 @@ function OrdersCard(props) {
             <input type="radio" name={"type" + id} id={"express-type" + id} />{" "}
             Expreso
           </label>
-        </React.Fragment>
+        </Fragment>
       );
     } else if (type === "express") {
       return (
-        <React.Fragment>
+        <Fragment>
           <label htmlFor={"normal-type" + id}>
             <input type="radio" name={"type" + id} id={"normal-type" + id} />{" "}
             Normal
@@ -56,7 +56,7 @@ function OrdersCard(props) {
             />{" "}
             Expreso
           </label>
-        </React.Fragment>
+        </Fragment>
       );
     }
   }

@@ -20,16 +20,16 @@ function InventoryCard(props) {
     }
   }
 
-  function moveSelectedImageForward(){
+  function moveSelectedImageForward() {
     setSelectedImage(
-      (selectedImage < props.items.image.length-1)? selectedImage+1:selectedImage
+      selectedImage < props.items.image.length - 1
+        ? selectedImage + 1
+        : selectedImage
     );
   }
 
-  function moveSelectedImageBackward(){
-    setSelectedImage(
-      (selectedImage > 0)? selectedImage-1:selectedImage
-    );
+  function moveSelectedImageBackward() {
+    setSelectedImage(selectedImage > 0 ? selectedImage - 1 : selectedImage);
   }
 
   const { items } = props;
@@ -62,13 +62,15 @@ function InventoryCard(props) {
       >
         <div>
           <figure>
-            <img src={items.image[selectedImage]} alt='' />
+            <img src={items.image[selectedImage]} alt="" />
           </figure>
           <figcaption>
             <button onClick={moveSelectedImageBackward} type="button">
               <span className="material-icons-outlined">arrow_back</span>
             </button>
-            <cite>{selectedImage+1} de {items.image.length}</cite>
+            <cite>
+              {selectedImage + 1} de {items.image.length}
+            </cite>
             <button onClick={moveSelectedImageForward} type="button">
               <span className="material-icons-outlined">arrow_forward</span>
             </button>
@@ -110,29 +112,46 @@ function InventoryCard(props) {
         </div>
         <div>
           <h4>Estado:</h4>
-          <label htmlFor={"new-status"+items.id}>
-            <input type="radio" name="status" id={"new-status"+items.id} defaultChecked /> Nuevo
+          <label htmlFor={"new-status" + items.id}>
+            <input
+              type="radio"
+              name="status"
+              id={"new-status" + items.id}
+              defaultChecked
+            />{" "}
+            Nuevo
           </label>
-          <label htmlFor={"used-status"+items.id}>
-            <input type="radio" name="status" id={"used-status"+items.id} /> Usado
+          <label htmlFor={"used-status" + items.id}>
+            <input type="radio" name="status" id={"used-status" + items.id} />{" "}
+            Usado
           </label>
-          <label htmlFor={"repair-status"+items.id}>
-            <input type="radio" name="status" id={"repair-status"+items.id} /> Reparado
+          <label htmlFor={"repair-status" + items.id}>
+            <input type="radio" name="status" id={"repair-status" + items.id} />{" "}
+            Reparado
           </label>
-          <label htmlFor={"hide-status"+items.id}>
-            <input type="radio" name="status" id={"hide-status"+items.id} /> Oculto
+          <label htmlFor={"hide-status" + items.id}>
+            <input type="radio" name="status" id={"hide-status" + items.id} />{" "}
+            Oculto
           </label>
 
           <br />
           <h4>Generos:</h4>
-          <label htmlFor={"male-gender"+items.id}>
-            <input type="radio" name="gender" id={"male-gender"+items.id} /> Hombre
+          <label htmlFor={"male-gender" + items.id}>
+            <input type="radio" name="gender" id={"male-gender" + items.id} />{" "}
+            Hombre
           </label>
-          <label htmlFor={"female-gender"+items.id}>
-            <input type="radio" name="gender" id={"female-gender"+items.id} /> Mujer
+          <label htmlFor={"female-gender" + items.id}>
+            <input type="radio" name="gender" id={"female-gender" + items.id} />{" "}
+            Mujer
           </label>
-          <label htmlFor={"all-gender"+items.id}>
-            <input type="radio" name="gender" id={"all-gender"+items.id} defaultChecked /> Todos
+          <label htmlFor={"all-gender" + items.id}>
+            <input
+              type="radio"
+              name="gender"
+              id={"all-gender" + items.id}
+              defaultChecked
+            />{" "}
+            Todos
           </label>
         </div>
 

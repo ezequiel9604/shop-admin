@@ -13,7 +13,6 @@ function Filter(props) {
     setTextInput(event.target.value);
   }
 
-
   function searchDataHandler() {
     const data = {
       option: selectInput,
@@ -39,7 +38,7 @@ function Filter(props) {
     <Fragment>
       <div className="filter-1">
         <div>
-          <select onChange={changeSelectInput}  name="" >
+          <select onChange={changeSelectInput} name="">
             {props.options.map((current, ind) => {
               return (
                 <option key={ind} defaultValue={current}>

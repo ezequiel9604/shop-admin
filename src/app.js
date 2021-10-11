@@ -12,7 +12,7 @@ import Inventory from "./page/inventory.component/Inventory";
 import Comment from "./page/comment.component/Comment";
 import Order from "./page/order.component/Order";
 
-function App(props) {
+function App() {
   return (
     <Switch>
       <Route path="/" exact>
