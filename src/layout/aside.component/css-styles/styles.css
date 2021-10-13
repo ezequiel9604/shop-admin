@@ -40,11 +40,10 @@ div.sidebar-header img{
 	width: fit-content;
 	margin: 20px auto;
 
-	font-family: "raleway-medium", sans-serif;
+	font-family: "raleway-semibold", sans-serif;
 	font-size: 16px;
 	color: #4d4d4d;
 }
-
 
 div.sidebar-body{
 	width: 100%;

@@ -12,19 +12,26 @@ function Notification(props) {
           </button>
         </div>
         <div className="notification-body">
-          {props.notifications.map((current) => {
-            return (
-              <div key={current.id}>
-                <Link to="/">{current.text}</Link>
-                <button
-                  onClick={() => props.onRemoveNotification(current.id)}
-                  className="btn-remove-notification"
-                >
-                  <span className="material-icons-outlined">cancel</span>
-                </button>
-              </div>
-            );
-          })}
+          {props.notifications.length? 
+            (props.notifications.map((current) => {
+              return (
+                <div className="list-items" key={current.id}>
+                  <Link to="/">{current.text}</Link>
+                  <button
+                    onClick={() => props.onRemoveNotification(current.id)}
+                    className="btn-remove-notification"
+                  >
+                    <span className="material-icons-outlined">cancel</span>
+                  </button>
+                </div>
+              );
+            }))
+            :
+            (<div className="empty-icon">
+              <span class="material-icons">notifications_none</span>
+              <strong>Bandeja de notificationes vacia!</strong>
+            </div>)
+          }
         </div>
       </div>
     </div>

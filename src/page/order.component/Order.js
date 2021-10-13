@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./css-styles/styles.css";
 import OrdersCard from "./OrdersCard";
 import FilterOrders from "../filter.component/FilterOrders";
+import Loading from "../loading.component/Loading";
 import { Orders } from "../../dummyData";
 
 function Order(props) {
-  const [orders, setOrders] = useState(Orders);
+  const [orders, setOrders] = useState(null);
   const [dataToFilter, setDataToFilter] = useState(null);
+
+  useEffect(()=>{
+    setOrders(Orders);
+  }, []);
 
   function searchDataToFilter(data) {
     setDataToFilter(data);
@@ -51,7 +56,7 @@ function Order(props) {
   }
 
   function getItems() {
-    if (dataToFilter) {
+    if (dataToFilter && orders) {
       let arr = [...orders];
       arr = arr.filter((current) => {
         switch (dataToFilter.option) {
@@ -108,10 +113,13 @@ function Order(props) {
             <label>Estado</label>
             <label>Detalles</label>
           </div>
-
-          {getItems().map((current) => {
-            return <OrdersCard order={current} key={current.id} />;
-          })}
+          {getItems()? 
+            (getItems().map((current) => {
+              return <OrdersCard order={current} key={current.id} />;
+            })) 
+            : 
+            (<Loading />)
+          }
         </div>
       </div>
     </div>

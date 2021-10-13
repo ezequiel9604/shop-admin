@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import "./css-styles/styles.css";
+import { AdminContext } from "../../store/AdminContext";
 import ManAvatar from "../../images/placeholder-man.png";
 
 function Aside(props) {
   const [isGeneralsOpen, setIsGeneralsOpen] = useState(false);
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isChartsOpen, setIsChartsOpen] = useState(false);
+  const admin= useContext(AdminContext);
 
   function changeStatePanelHandler(id) {
     if (id === 1) {
@@ -22,8 +24,8 @@ function Aside(props) {
   return (
     <aside id="main-sidebar" style={props.isSidebarOpen ? { left: "0" } : null}>
       <div className="sidebar-header">
-        <img src={ManAvatar} alt="" />
-        <h3 className="sidebar-admin-name">Ezequiel Diaz Peña</h3>
+        <img src={admin.image} alt="" />
+        <h3 className="sidebar-admin-name">{admin.name}</h3>
       </div>
 
       <div className="sidebar-body">

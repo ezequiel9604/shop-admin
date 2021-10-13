@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./css-styles/styles.css";
-
 import CommentsCard from "./CommentsCard";
 import FilterComments from "../filter.component/FilterComments";
+import Loading from "../loading.component/Loading";
 import { Comments } from "../../dummyData";
 
 function Comment() {
 
-  const [comments, setComments] = useState(Comments);
+  const [comments, setComments] = useState(null);
   const [dataToFilter, setDataToFilter] = useState(null);
+
+  useEffect(()=>{
+    setComments(Comments);
+  }, []);
 
   function searchDataToFilter(data) {
     setDataToFilter(data);
@@ -29,7 +33,7 @@ function Comment() {
 
   function getItems() {
 
-    if (dataToFilter) {
+    if (dataToFilter && comments) {
       let arr = [...comments];
       arr = arr.filter((current) => {
         switch (dataToFilter.option) {
@@ -86,10 +90,13 @@ function Comment() {
               <label>Estado</label>
               <label>Detalles</label>
             </div>
-
-            {getItems().map((current) => {
-              return <CommentsCard comments={current} key={current.id} />;
-            })}
+            {getItems()? 
+              (getItems().map((current) => {
+                return <CommentsCard comments={current} key={current.id} />;
+              })) 
+              : 
+              (<Loading />)
+            }
           </div>
         </div>
       </div>

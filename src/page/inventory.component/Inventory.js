@@ -1,13 +1,18 @@
-import { useState } from "react";
-import "./css-styles/styles.css";
+import { useState, useEffect } from "react";
 
+import "./css-styles/styles.css";
 import InventoryCard from "./InventoryCard";
 import FilterInventory from "../filter.component/FilterInventory";
+import Loading from "../loading.component/Loading";
 import { Items } from "../../dummyData";
 
 function Inventory(props) {
-  const [items, setItems] = useState(Items);
+  const [items, setItems] = useState(null);
   const [dataToFilter, setDataToFilter] = useState(null);
+
+  useEffect(()=>{
+    setItems(Items);
+  }, []);
 
   function searchDataToFilter(data) {
     setDataToFilter(data);
@@ -169,7 +174,7 @@ function Inventory(props) {
   }
 
   function getItems() {
-    if (dataToFilter) {
+    if (dataToFilter && items) {
       let arr = [...items];
       arr = arr.filter((current) => {
         switch (dataToFilter.option) {
@@ -225,10 +230,13 @@ function Inventory(props) {
             <label>Cantidad</label>
             <label>Detalles</label>
           </div>
-
-          {getItems().map((current) => {
-            return <InventoryCard key={current.id} items={current} />;
-          })}
+          {getItems()? 
+            (getItems().map((current) => {
+              return <InventoryCard items={current} key={current.id} />;
+            })) 
+            : 
+            (<Loading />)
+          }
         </div>
       </div>
     </div>

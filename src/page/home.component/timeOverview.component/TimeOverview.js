@@ -5,8 +5,9 @@ function TimeOverview() {
   const [timer, setTimer] = useState(new Date());
 
   useEffect(() => {
-    let timerID= setTimeout(() => {
-      setTimer((timer) => (timer = new Date()));
+
+    let timerID = setTimeout(() => {
+      setTimer(new Date());
     }, 1000);
 
     return () => clearTimeout(timerID);

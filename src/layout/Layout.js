@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./header.component/Header";
 import Aside from "./aside.component/Aside";
@@ -7,22 +7,25 @@ import Notification from "./notification.component/Notification";
 import { Notifications } from "../dummyData";
 
 function Layout(props) {
-
-  const [notifications, setNotification] = useState(Notifications);
+  const [notifications, setNotification] = useState([]);
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isNotificationOpen, setNotificationOpen] = useState(false);
 
-  function changeSidebarHandler(){
+  useEffect(() => {
+    setNotification(Notifications);
+  }, []);
+
+  function changeSidebarHandler() {
     setSidebarOpen(!isSidebarOpen);
   }
 
-  function changeNotificationHandler(){
+  function changeNotificationHandler() {
     setNotificationOpen(!isNotificationOpen);
   }
 
-  function removingNotificationHandler(id){
-    const arr = [...notifications];
-    arr = arr.filter((current)=>{
+  function removingNotificationHandler(id) {
+    let arr = [...notifications];
+    arr = arr.filter((current) => {
       return current.id !== id;
     });
     setNotification(arr);
@@ -43,16 +46,15 @@ function Layout(props) {
         />
 
         <main style={isSidebarOpen ? { width: "82%", left: "18%" } : null}>
-          <div className="ctn">
-            {props.children}
-          </div>
+          <div className="ctn">{props.children}</div>
 
           <ChatSidebar />
         </main>
       </div>
 
       {isNotificationOpen && (
-        <Notification notifications={notifications}
+        <Notification
+          notifications={notifications}
           onRemoveNotification={removingNotificationHandler}
           onIsNotificationOpen={changeNotificationHandler}
         />
@@ -62,4 +64,3 @@ function Layout(props) {
 }
 
 export default Layout;
-

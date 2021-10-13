@@ -12,45 +12,149 @@ const txt =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit." +
   "dolor sit amet consectetur, adipisicing elit.";
 
-  const tlt =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
-      "Libero repudiandae suscipit, sequi ex ipsam earum quia voluptas aliquid quaerat" +
-      " commodi totam expedita exercitationem perferendis quae beatae tempora laborum at laboriosam?";
+const tlt =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
+  "Libero repudiandae suscipit, sequi ex ipsam earum quia voluptas aliquid quaerat" +
+  " commodi totam expedita exercitationem perferendis quae beatae tempora laborum at laboriosam?";
 
-      const descr =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum" +
-      "omnis dolor numquam voluptatum illum animi, labore dolorem hic," +
-      "ullam esse libero delectus quas, ipsum in atque sapiente" +
-      "consequuntur reiciendis similique. Lorem ipsum dolor sit, amet," +
-      "consectetur adipisicing elit. Ad soluta, aspernatur eos quod" +
-      "voluptatem doloribus voluptates doloremque, reprehenderit" +
-      "asperiores, quia, autem nisi libero quis? Enim quae eligendi autem" +
-      "quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit." +
-      "Architecto atque eum eaque temporibus non impedit officiis" +
-      "quisquam fugit sequi consectetur iure, facilis, mollitia magnam" +
-      "animi. Reprehenderit necessitatibus nisi corrupti odio! Lorem" +
-      "ipsum dolor sit amet consectetur, adipisicing, elit. Facilis" +
-      "eligendi accusantium fugit quas quo consectetur, nihil, nam enim" +
-      "esse ea tenetur iste, minus voluptatibus odit earum corporis," +
-      "nostrum voluptate sunt. Lorem ipsum dolor sit amet consectetur" +
-      "adipisicing elit. Nesciunt quod distinctio recusandae quam," +
-      "dolore, consequatur laborum facilis beatae deleniti porro" +
-      "doloribus neque, iusto veritatis obcaecati quos vel, inventore" +
-      "eaque sapiente! Lorem ipsum dolor, sit amet consectetur" +
-      "adipisicing elit. Dolor at distinctio pariatur, quos dolorum quo" +
-      "nisi! Ratione, odit doloribus laudantium ipsa. Ipsum nostrum, amet" +
-      "et qui sint architecto doloribus ad. Lorem ipsum dolor sit amet" +
-      "consectetur adipisicing elit. Ab magni debitis quis eos aspernatur" +
-      "excepturi, modi repellendus at nobis. Deserunt officiis expedita" +
-      "voluptatibus, incidunt dolores neque qui dicta saepe" +
-      "necessitatibus. Lorem ipsum dolor, sit amet consectetur" +
-      "adipisicing elit. Dolor at distinctio pariatur, quos dolorum quo" +
-      "nisi! Ratione, odit doloribus laudantium ipsa. Ipsum nostrum, amet" +
-      "et qui sint architecto doloribus ad. Lorem ipsum dolor sit amet" +
-      "consectetur adipisicing elit. Ab magni debitis quis eos aspernatur" +
-      "excepturi, modi repellendus at nobis. Deserunt officiis expedita" +
-      "voluptatibus, incidunt dolores neque qui dicta saepe" +
-      "necessitatibus.";  
+const descr =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum" +
+  "omnis dolor numquam voluptatum illum animi, labore dolorem hic," +
+  "ullam esse libero delectus quas, ipsum in atque sapiente" +
+  "consequuntur reiciendis similique. Lorem ipsum dolor sit, amet," +
+  "consectetur adipisicing elit. Ad soluta, aspernatur eos quod" +
+  "voluptatem doloribus voluptates doloremque, reprehenderit" +
+  "asperiores, quia, autem nisi libero quis? Enim quae eligendi autem" +
+  "quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit." +
+  "Architecto atque eum eaque temporibus non impedit officiis" +
+  "quisquam fugit sequi consectetur iure, facilis, mollitia magnam" +
+  "animi. Reprehenderit necessitatibus nisi corrupti odio! Lorem" +
+  "ipsum dolor sit amet consectetur, adipisicing, elit. Facilis" +
+  "eligendi accusantium fugit quas quo consectetur, nihil, nam enim" +
+  "esse ea tenetur iste, minus voluptatibus odit earum corporis," +
+  "nostrum voluptate sunt. Lorem ipsum dolor sit amet consectetur" +
+  "adipisicing elit. Nesciunt quod distinctio recusandae quam," +
+  "dolore, consequatur laborum facilis beatae deleniti porro" +
+  "doloribus neque, iusto veritatis obcaecati quos vel, inventore" +
+  "eaque sapiente! Lorem ipsum dolor, sit amet consectetur" +
+  "adipisicing elit. Dolor at distinctio pariatur, quos dolorum quo" +
+  "nisi! Ratione, odit doloribus laudantium ipsa. Ipsum nostrum, amet" +
+  "et qui sint architecto doloribus ad. Lorem ipsum dolor sit amet" +
+  "consectetur adipisicing elit. Ab magni debitis quis eos aspernatur" +
+  "excepturi, modi repellendus at nobis. Deserunt officiis expedita" +
+  "voluptatibus, incidunt dolores neque qui dicta saepe" +
+  "necessitatibus. Lorem ipsum dolor, sit amet consectetur" +
+  "adipisicing elit. Dolor at distinctio pariatur, quos dolorum quo" +
+  "nisi! Ratione, odit doloribus laudantium ipsa. Ipsum nostrum, amet" +
+  "et qui sint architecto doloribus ad. Lorem ipsum dolor sit amet" +
+  "consectetur adipisicing elit. Ab magni debitis quis eos aspernatur" +
+  "excepturi, modi repellendus at nobis. Deserunt officiis expedita" +
+  "voluptatibus, incidunt dolores neque qui dicta saepe" +
+  "necessitatibus.";
+
+export const Admin = {
+  id: "ADM-455120",
+  image: ManAvatar,
+  name: "Ezequiel Diaz Peña",
+  messages:[
+    {
+      id: "RSP-101963",
+      text: "we really apreciate that you receive you item sooner and about the iphone will send you a msg ok.",
+      date: "2021-10-13T08:56:11Z",
+      clientMessageId: "MSG-011698"
+    },
+    {
+      id: "RSP-101753",
+      text: "for now we do not have offers or descount for tablets, we will let you know when we do.",
+      date: "2021-10-13T09:12:11Z",
+      clientMessageId: "MSG-011954"
+    },
+  ]
+};
+
+export const ClientsToTalk = [
+  {
+    id: "USR-025789",
+    image: UserImage,
+    name: "Natalie Portman",
+    status: "connect",
+    unReadMessage: 0,
+    messages: [
+      {
+        id: "MSG-011458",
+        text: "I ordered smart tv yesterday and I received today, that was really fast.",
+        date: "2021-10-13T08:54:02Z",
+      },
+      {
+        id: "MSG-011698",
+        text: "Hi, i want to know when the iphone will be in stock again?",
+        date: "2021-10-13T08:59:11Z",
+      },
+    ],
+  },
+  {
+    id: "USR-025147",
+    image: ManAvatar,
+    name: "Will Smith",
+    status: "suspend",
+    unReadMessage: 1,
+    messages: [
+      {
+        id: "MSG-011401",
+        text: "I am very interesting to purchase a tablet, can I get a descount?.",
+        date: "2021-10-13T09:08:22Z",
+      },
+      {
+        id: "MSG-011954",
+        text: "I will buy 3 of them if I get the descount.",
+        date: "2021-10-13T09:10:11Z",
+      },
+      {
+        id: "MSG-011381",
+        text: "that's to bad, well maybe next time.",
+        date: "2021-10-13T09:13:14Z",
+      },
+    ],
+  },
+  {
+    id: "USR-025100",
+    image: WomanAvatar,
+    name: "Scarlet Johanson",
+    status: "offline",
+    unReadMessage: 0,
+    messages: [
+      {
+        id: "MSG-011567",
+        text: "tomorrow i will have a party, if i buy a speaker can i get it for today?",
+        date: "2021-10-13T08:27:02Z",
+      },
+      {
+        id: "MSG-011107",
+        text: "also i need a phone, what is the cheapest phone that you guys have?",
+        date: "2021-10-13T08:28:39Z",
+      },
+    ],
+  },
+  {
+    id: "USR-025570",
+    image: ManAvatar,
+    name: "Denzel Washinton",
+    status: "connect",
+    unReadMessage: 0,
+    messages: [
+      {
+        id: "MSG-01852",
+        text: "i have heard that you sell phones with the lower price.",
+        date: "2021-10-13T08:31:02Z",
+      },
+      {
+        id: "MSG-011001",
+        text: "is that correct, and if it is? how much for samsung a11?",
+        date: "2021-10-13T08:33:39Z",
+      },
+    ],
+  },
+];
 
 export const Entities = [
   {
@@ -97,44 +201,6 @@ export const Notifications = [
   { id: "noti004", text: "4 " + txt },
   { id: "noti005", text: "5 " + txt },
   { id: "noti006", text: "6 " + txt },
-];
-
-export const ClientsToTalk = [
-  {
-    id: "USR-025789",
-    image: UserImage,
-    name: "Natalie Portman",
-    status: "connect",
-    unReadMessage: 2,
-  },
-  {
-    id: "USR-025147",
-    image: ManAvatar,
-    name: "Will Smith",
-    status: "suspend",
-    unReadMessage: 3,
-  },
-  {
-    id: "USR-025100",
-    image: WomanAvatar,
-    name: "Scarlet Johanson",
-    status: "offline",
-    unReadMessage: 1,
-  },
-  {
-    id: "USR-025371",
-    image: ManAvatar,
-    name: "Morgan Freeman",
-    status: "connect",
-    unReadMessage: 0,
-  },
-  {
-    id: "USR-025570",
-    image: ManAvatar,
-    name: "Denzel Washinton",
-    status: "connect",
-    unReadMessage: 0,
-  },
 ];
 
 export const Clients = [
@@ -240,7 +306,13 @@ export const Brands = [
   "brand 6",
 ];
 
-export const Departments = ["Tecnologia", "Ferreteria", "Ropa", "Calzado", "Hogar"];
+export const Departments = [
+  "Tecnologia",
+  "Ferreteria",
+  "Ropa",
+  "Calzado",
+  "Hogar",
+];
 
 export const Items = [
   {
@@ -304,8 +376,9 @@ export const Items = [
         purchasedPrice: 950,
         sellPrice: 1450,
         offerPrice: 0,
-      }]
-  }
+      },
+    ],
+  },
 ];
 
 export const Orders = [

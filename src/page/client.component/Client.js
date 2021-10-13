@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./css-styles/styles.css";
 import ClientsCard from "./ClientsCard";
 import FilterClients from "../filter.component/FilterClients";
+import Loading from "../loading.component/Loading";
 import { Clients } from "../../dummyData";
 
-function Client() {
-  const [clients, setClients] = useState(Clients);
+function Client(props) {
+  const [clients, setClients] = useState(null);
   const [dataToFilter, setDataToFilter] = useState(null);
+
+  useEffect(()=>{
+    setClients(Clients);
+  }, []);
 
   function searchDataToFilter(data) {
     setDataToFilter(data);
@@ -51,7 +56,7 @@ function Client() {
   }
 
   function getItems() {
-    if (dataToFilter) {
+    if (dataToFilter && clients) {
       let arr = [...clients];
       arr = arr.filter((current) => {
         switch (dataToFilter.option) {
@@ -119,10 +124,13 @@ function Client() {
             <label>Estado</label>
             <label>Detalles</label>
           </div>
-
-          {getItems().map((current) => {
-            return <ClientsCard clients={current} key={current.id} />;
-          })}
+          {getItems()? 
+            (getItems().map((current) => {
+              return <ClientsCard clients={current} key={current.id} />;
+            })) 
+            : 
+            (<Loading />)
+          }
         </div>
       </div>
     </div>
