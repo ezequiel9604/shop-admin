@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./css/css-reset.css";
 import "./css/general_styles.css";
@@ -16,11 +16,7 @@ import { AdminContext } from "./store/AdminContext";
 
 function App(props) {
 
-  const [admin, setAdmin] = useState("");
-
-  useEffect(()=>{
-    setAdmin(Admin);
-  }, []);
+  const [admin, setAdmin] = useState(Admin);
 
   return (
     <Switch>

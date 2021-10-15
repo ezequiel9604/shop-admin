@@ -182,40 +182,6 @@ div.box-table-body article button span{
 }
 
 /* ------------------ box update details ----------------------- */
-@keyframes loading-animation {
-	from{transform: rotate(0deg);}
-	to {transform: rotate(360deg);}
-}
-
-div.box-table-loading div{
-	border-top: 6px solid #4d4d4d;
-	border-bottom: 6px solid #dddddd;
-	border-left: 6px solid #dddddd;
-	border-right: 6px solid #dddddd;
-	width: 30px;
-	height: 30px;
-	margin: 0 auto;
-	margin-top: 40px;
-	margin-bottom: 10px;
-
-	border-radius: 50%;
-	transform: rotate(0deg);
-	animation-name: loading-animation;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-}
-
-div.box-table-loading strong{
-	display: block;
-	width: fit-content;
-	margin: 0 auto;
-	margin-top: 10px;
-	margin-bottom: 40px;
-	font-family: "raleway-medium", sans-serif;
-	color: #4d4d4d;
-}
-
-/* ------------------ box update details ----------------------- */
 
 form.box-update-details{
 	/*border: 1px solid;*/

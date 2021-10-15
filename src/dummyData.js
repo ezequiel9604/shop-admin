@@ -56,103 +56,194 @@ export const Admin = {
   id: "ADM-455120",
   image: ManAvatar,
   name: "Ezequiel Diaz Peña",
-  messages:[
-    {
-      id: "RSP-101963",
-      text: "we really apreciate that you receive you item sooner and about the iphone will send you a msg ok.",
-      date: "2021-10-13T08:56:11Z",
-      clientMessageId: "MSG-011698"
-    },
-    {
-      id: "RSP-101753",
-      text: "for now we do not have offers or descount for tablets, we will let you know when we do.",
-      date: "2021-10-13T09:12:11Z",
-      clientMessageId: "MSG-011954"
-    },
-  ]
+  email: "ezequiel01@gmail.com",
+  phone: "809-111-2222",
+  password: "password"
 };
 
-export const ClientsToTalk = [
+export const Messages = [
   {
-    id: "USR-025789",
-    image: UserImage,
+    id: "CSV-01360",
+    text: "Hello guys, how you doing?",
+    date: "2021-10-13T08:53:31Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025456",
+    type: "question"
+  },
+  {
+    id: "CSV-011458",
+    text: "I ordered smart tv yesterday and I received today, that was really fast. also the delivery man was really nice and help me set up the tv, thanks.",
+    date: "2021-10-13T08:54:02Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025456",
+    type: "question"
+  },
+  {
+    id: "CSV-011698",
+    text: "Hi, i want to know when the iphone will be in stock again?",
+    date: "2021-10-13T08:56:11Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025456",
+    type: "question"
+  },
+  {
+    id: "CSV-101963",
+    text: "we really apreciate that you receive you item sooner and about the iphone will send you a msg ok.",
+    date: "2021-10-13T08:59:00Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025456",
+    type: "response"
+  },
+  {
+    id: "CSV-011401",
+    text: "I am very interesting to purchase a tablet, can I get a descount?.",
+    date: "2021-10-13T09:08:22Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025941",
+    type: "question"
+  },
+  {
+    id: "CSV-011954",
+    text: "I will buy 3 of them if I get the descount.",
+    date: "2021-10-13T09:10:11Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025941",
+    type: "question"
+  },
+  {
+    id: "CSV-101789",
+    text: "for now we do not have offers or descount for tablets, we will let you know when we do.",
+    date: "2021-10-13T09:12:00Z",
+    clientId: "USR-025941",
+    adminId: "ADM-455120",
+    type: "response"
+  },
+  {
+    id: "CSV-011381",
+    text: "that's to bad, well maybe next time.",
+    date: "2021-10-13T09:13:14Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025941",
+    type: "question"
+  },
+  {
+    id: "CSV-011567",
+    text: "tomorrow i will have a party, if i buy a speaker can i get it for today?",
+    date: "2021-10-13T08:27:02Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025965",
+    type: "question"
+  },
+  {
+    id: "CSV-011107",
+    text: "also i need a phone, what is the cheapest phone that you guys have?",
+    date: "2021-10-13T08:28:39Z",
+    adminId: "ADM-455120",
+    clientId: "USR-025965",
+    type: "question"
+  },
+  {
+    id: "CSV-101002",
+    text: "the cheapest phone that we have now is the alcatel for $25.00.",
+    date: "2021-10-13T08:31:00Z",
+    clientId: "USR-025965",
+    adminId: "ADM-455120",
+    type: "response"
+  },
+  {
+    id: "CSV-01852",
+    text: "i have heard that you sell tv with the lowest price in the market.",
+    date: "2021-10-13T08:31:02Z",
+    clientId: "USR-025408",
+    adminId: "ADM-455120",
+    type: "question"
+  },
+  {
+    id: "CSV-011001",
+    text: "is that right, and if it is? how much for smart tv makna?",
+    date: "2021-10-13T08:33:39Z",
+    clientId: "USR-025408",
+    adminId: "ADM-455120",
+    type: "question"
+  },
+  {
+    id: "CSV-101954",
+    text: "yes, that is right. smart tv makna for $99. also we sell smart tv fire amazon for $89.",
+    date: "2021-10-13T08:35:00Z",
+    clientId: "USR-025408",
+    adminId: "ADM-455120",
+    type: "response"
+  },
+];
+
+export const Clients = [
+  {
+    id: "USR-025456",
     name: "Natalie Portman",
-    status: "connect",
+    email: "natalieportman@gmail.com",
+    image: UserImage,
+    gender: "female",
+    status: "connected",
+    type: "normal",
+    phone: "809-111-0000",
+    birthday: "1997-05-02",
+    password: "mypassword",
     unReadMessage: 0,
-    messages: [
-      {
-        id: "MSG-011458",
-        text: "I ordered smart tv yesterday and I received today, that was really fast.",
-        date: "2021-10-13T08:54:02Z",
-      },
-      {
-        id: "MSG-011698",
-        text: "Hi, i want to know when the iphone will be in stock again?",
-        date: "2021-10-13T08:59:11Z",
-      },
-    ],
+    streetNumber: 8,
+    streetName: "Francisco Henriquez y Carvajal",
+    hood: "Brisas del Este",
+    city: "Santo Domingo Este",
   },
   {
-    id: "USR-025147",
+    id: "USR-025941",
+    name: "John Doe",
+    email: "johndoe@gmail.com",
     image: ManAvatar,
-    name: "Will Smith",
-    status: "suspend",
-    unReadMessage: 1,
-    messages: [
-      {
-        id: "MSG-011401",
-        text: "I am very interesting to purchase a tablet, can I get a descount?.",
-        date: "2021-10-13T09:08:22Z",
-      },
-      {
-        id: "MSG-011954",
-        text: "I will buy 3 of them if I get the descount.",
-        date: "2021-10-13T09:10:11Z",
-      },
-      {
-        id: "MSG-011381",
-        text: "that's to bad, well maybe next time.",
-        date: "2021-10-13T09:13:14Z",
-      },
-    ],
-  },
-  {
-    id: "USR-025100",
-    image: WomanAvatar,
-    name: "Scarlet Johanson",
+    gender: "male",
     status: "offline",
+    type: "express",
+    phone: "809-222-0000",
+    birthday: "1996-08-12",
+    password: "mypassword",
     unReadMessage: 0,
-    messages: [
-      {
-        id: "MSG-011567",
-        text: "tomorrow i will have a party, if i buy a speaker can i get it for today?",
-        date: "2021-10-13T08:27:02Z",
-      },
-      {
-        id: "MSG-011107",
-        text: "also i need a phone, what is the cheapest phone that you guys have?",
-        date: "2021-10-13T08:28:39Z",
-      },
-    ],
+    streetNumber: 8,
+    streetName: "Francisco Henriquez y Carvajal",
+    hood: "Brisas del Este",
+    city: "Santo Domingo Este",
   },
   {
-    id: "USR-025570",
-    image: ManAvatar,
-    name: "Denzel Washinton",
-    status: "connect",
+    id: "USR-025965",
+    name: "Maria Perez",
+    email: "mariaperez@gmail.com",
+    image: WomanAvatar,
+    gender: "female",
+    status: "suspended",
+    type: "normal",
+    phone: "809-222-0000",
+    birthday: "1995-01-20",
+    password: "mypassword",
     unReadMessage: 0,
-    messages: [
-      {
-        id: "MSG-01852",
-        text: "i have heard that you sell phones with the lower price.",
-        date: "2021-10-13T08:31:02Z",
-      },
-      {
-        id: "MSG-011001",
-        text: "is that correct, and if it is? how much for samsung a11?",
-        date: "2021-10-13T08:33:39Z",
-      },
-    ],
+    streetNumber: 8,
+    streetName: "Francisco Henriquez y Carvajal",
+    hood: "Brisas del Este",
+    city: "Santo Domingo Este",
+  },
+  {
+    id: "USR-025408",
+    name: "Mike Doe",
+    email: "mikedoe@gmail.com",
+    image: ManAvatar,
+    gender: "male",
+    status: "retired",
+    type: "normal",
+    phone: "809-222-0000",
+    birthday: "1995-12-10",
+    password: "mypassword",
+    unReadMessage: 0,
+    streetNumber: 8,
+    streetName: "Francisco Henriquez y Carvajal",
+    hood: "Brisas del Este",
+    city: "Santo Domingo Este",
   },
 ];
 
@@ -201,73 +292,6 @@ export const Notifications = [
   { id: "noti004", text: "4 " + txt },
   { id: "noti005", text: "5 " + txt },
   { id: "noti006", text: "6 " + txt },
-];
-
-export const Clients = [
-  {
-    id: "USR-025456",
-    name: "Sarah Doe",
-    email: "sarahdoe@gmail.com",
-    image: WomanAvatar,
-    gender: "female",
-    status: "connected",
-    type: "normal",
-    phone: "809-111-0000",
-    birthday: "1997-05-02",
-    password: "mypassword",
-    streetNumber: 8,
-    streetName: "Francisco Henriquez y Carvajal",
-    hood: "Brisas del Este",
-    city: "Santo Domingo Este",
-  },
-  {
-    id: "USR-025941",
-    name: "John Doe",
-    email: "johndoe@gmail.com",
-    image: ManAvatar,
-    gender: "male",
-    status: "offline",
-    type: "express",
-    phone: "809-222-0000",
-    birthday: "1996-08-12",
-    password: "mypassword",
-    streetNumber: 8,
-    streetName: "Francisco Henriquez y Carvajal",
-    hood: "Brisas del Este",
-    city: "Santo Domingo Este",
-  },
-  {
-    id: "USR-025965",
-    name: "Maria Perez",
-    email: "mariaperez@gmail.com",
-    image: WomanAvatar,
-    gender: "female",
-    status: "suspended",
-    type: "normal",
-    phone: "809-222-0000",
-    birthday: "1995-01-20",
-    password: "mypassword",
-    streetNumber: 8,
-    streetName: "Francisco Henriquez y Carvajal",
-    hood: "Brisas del Este",
-    city: "Santo Domingo Este",
-  },
-  {
-    id: "USR-025408",
-    name: "Mike Doe",
-    email: "mikedoe@gmail.com",
-    image: ManAvatar,
-    gender: "male",
-    status: "retired",
-    type: "normal",
-    phone: "809-222-0000",
-    birthday: "1995-12-10",
-    password: "mypassword",
-    streetNumber: 8,
-    streetName: "Francisco Henriquez y Carvajal",
-    hood: "Brisas del Este",
-    city: "Santo Domingo Este",
-  },
 ];
 
 export const Comments = [

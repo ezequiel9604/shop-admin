@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import "./css-styles/styles.css";
 import { AdminContext } from "../../store/AdminContext";
-import ManAvatar from "../../images/placeholder-man.png";
 
 function Aside(props) {
   const [isGeneralsOpen, setIsGeneralsOpen] = useState(false);

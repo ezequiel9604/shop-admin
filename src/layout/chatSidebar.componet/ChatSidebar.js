@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import "./css-styles/styles.css";
 import ChatMessage from "./ChatMessage";
-import { ClientsToTalk } from "../../dummyData";
+import Loading from "../../page/loading.component/Loading";
+import { AdminContext } from "../../store/AdminContext";
+import { Clients, Messages } from "../../dummyData";
 
 function ChatSidebar() {
-  const [clients, setClients] = useState(ClientsToTalk);
+  const [clients, setClients] = useState(Clients);
+  const [messages, setMessage] = useState(null);
   const [selectedClient, setSelectedClient] = useState(0);
   const [isChatSidebarOpen, setIsChatSidebarOpen] = useState(false);
+  const [messageInput, setMessageInput] = useState("");
+  const Admin = useContext(AdminContext);
+
+  useEffect(()=>{
+    setMessage(Messages);
+  },[]);
 
   function changeChatSidebarOpenHandler() {
     setIsChatSidebarOpen(!isChatSidebarOpen);
@@ -18,11 +27,11 @@ function ChatSidebar() {
   }
 
   function formatClientStatus(status) {
-    if (status === "connect") {
+    if (status === "connected") {
       return (
         <span className="usr-status usr-connected" title="Conectado"></span>
       );
-    } else if (status === "suspend") {
+    } else if (status === "suspended") {
       return (
         <span className="usr-status usr-suspended" title="Suspendido"></span>
       );
@@ -32,6 +41,27 @@ function ChatSidebar() {
       );
     } else if (status === "retired") {
       return <span className="usr-status usr-retired" title="Retirado"></span>;
+    }
+  }
+
+  function changeMessageInput(event) {
+    setMessageInput(event.target.value);
+  }
+
+  function sendMessageToClient() {
+    if(messageInput !== ""){
+      const response = {
+        id: "CSV-972384",
+        text: messageInput,
+        date: new Date(),
+        clientId: clients[selectedClient].id,
+        adminId: Admin.id,
+        type: "response",
+      };
+      const arr = [...messages];
+      arr.push(response);
+      setMessage(arr);
+      setMessageInput("");
     }
   }
 
@@ -78,15 +108,29 @@ function ChatSidebar() {
 
         <div id="chat-send-received-msg-container">
           
-          <div className="bubbles-container">
-
-            <ChatMessage client={clients[selectedClient]} />
-
-          </div>
+          {messages? 
+            (<ChatMessage
+              client={clients[selectedClient]}
+              admin={Admin}
+              messages={messages}
+            />)
+            :
+            (<Loading title='Mensajes' />)
+          }
 
           <div id="chat-send-msg-container">
-            <input type="text" id="inp-msg" placeholder="Escribe un mensaje!" />
-            <button type="button" id="btn-send-msg">
+            <input
+              onChange={changeMessageInput}
+              value={messageInput}
+              type="text"
+              id="inp-msg"
+              placeholder="Escribe un mensaje!"
+            />
+            <button
+              onClick={sendMessageToClient}
+              type="button"
+              id="btn-send-msg"
+            >
               <span className="material-icons-outlined">send</span>
             </button>
           </div>

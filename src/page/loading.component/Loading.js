@@ -1,9 +1,9 @@
-
+import "./css-styles/styles.css";
 function Loading(props) {
     return (
-        <div className="box-table-body box-table-loading">
+        <div className="loading-container">
             <div></div>
-            <strong>Loading...</strong>
+            <strong>Cargando {props.title}...</strong>
         </div>
     );
 }

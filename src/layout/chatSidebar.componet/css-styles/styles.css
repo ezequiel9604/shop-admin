@@ -22,8 +22,8 @@ div#chat-sidebar{
 	align-items: center;
 
 	padding: 5px 20px;
-	border: 1px solid #1e293b;
-	background-color: #1e293b;
+	border: 1px solid #615f5f;
+	background-color: #615f5f;
 	border-radius: 10px 10px 0 0;
 }
 
@@ -202,39 +202,10 @@ div.usr-to-talk:nth-child(10):hover .usr-name{
 	background-color: #ffcc00;
 }
 .usr-suspended{
-	background-color: #cccccc;
+	background-color: #333333;
 }
 .usr-retired{
 	background-color: #ff4d4d;
-}
-
-/* width */
-div#usrs-to-talk-container::-webkit-scrollbar,
-div.bubbles-container::-webkit-scrollbar,
-div#usrs-to-talk-container::-moz-scrollbar,
-div.bubbles-container::-moz-scrollbar {
- 	width: 5px;
-}
-/* Track */
-div#usrs-to-talk-container::-webkit-scrollbar-track,
-div.bubbles-container::-webkit-scrollbar-track,
-div#usrs-to-talk-container::-moz-scrollbar-track,
-div.bubbles-container::-moz-scrollbar-track {
-  	background:#80d4ff; 
-}
-/* Handle */
-div#usrs-to-talk-container::-webkit-scrollbar-thumb,
-div.bubbles-container::-webkit-scrollbar-thumb,
-div#usrs-to-talk-container::-moz-scrollbar-thumb,
-div.bubbles-container::-moz-scrollbar-thumb {
-  	background-color: #005580; 
-}
-/* Handle on hover */
-div#usrs-to-talk-container::-webkit-scrollbar-thumb:hover,
-div.bubbles-container::-webkit-scrollbar-thumb:hover,
-div#usrs-to-talk-container::-moz-scrollbar-thumb:hover,
-div.bubbles-container::-moz-scrollbar-thumb:hover  {
-  	background: #005580; 
 }
 
 /* chat send and receive messagers*/
@@ -253,7 +224,7 @@ div.bubbles-container{
 	height: 87%;
     box-sizing: border-box;
 
-	overflow: auto;
+	overflow-y: scroll;
 }
 
 div.bubbles-user, 
@@ -262,7 +233,7 @@ div.bubbles-admin{
 	width: 95%;
 	margin: 0 auto;
 	margin-top: 10px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 
 	display: flex;
 	align-items: flex-end;
@@ -283,19 +254,19 @@ div.usr-msgs{
 div.usr-msgs > p,
 div.admin-msgs > p{
 	border: 1px solid transparent;
-	width: 100%;
+	width: fit-content;
 	box-sizing: border-box;
 	margin-bottom: 5px;
 	padding: 6px 8px;
 
 	font-family: "raleway-medium", sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	color: #4d4d4d;
 	line-height: 18px;
 	text-align: left;
 
 	box-shadow: 1px 1px 1px #dddddd;
-	border-radius: 0px 6px 0px 6px;
+	border-radius: 0px 10px 0px 10px;
 	background-color: #ffffff;
 }
 
@@ -320,7 +291,7 @@ div.usr-msgs > time{
 	left: 10px;
 }
 div.admin-msgs > time{
-	right: 10px;
+	left: 10px;
 }
 
 div.admin-msgs{
