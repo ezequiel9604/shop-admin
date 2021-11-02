@@ -125,7 +125,7 @@ function Aside(props) {
             <span className="material-icons-outlined">highlight_off</span>
             Cancelaciones
           </Link>
-          <strong className="small-number">2</strong>
+          <strong className="small-number">0</strong>
         </button>
 
         <button className="btn-sidebar-accordion">
@@ -133,14 +133,14 @@ function Aside(props) {
             <span className="material-icons-outlined">assignment_return</span>
             Devoluciones
           </Link>
-          <strong className="medium-number">5</strong>
+          <strong className="medium-number">0</strong>
         </button>
 
         <button className="btn-sidebar-accordion">
           <Link to="/chat">
             <span className="material-icons-outlined">chat</span>Chat
           </Link>
-          <strong className="large-number">10</strong>
+          <strong className="large-number">0</strong>
         </button>
       </div>
     </aside>

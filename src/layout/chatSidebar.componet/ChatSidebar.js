@@ -14,9 +14,9 @@ function ChatSidebar() {
   const [messageInput, setMessageInput] = useState("");
   const Admin = useContext(AdminContext);
 
-  useEffect(()=>{
+  useEffect(() => {
     setMessage(Messages);
-  },[]);
+  }, []);
 
   function changeChatSidebarOpenHandler() {
     setIsChatSidebarOpen(!isChatSidebarOpen);
@@ -49,7 +49,7 @@ function ChatSidebar() {
   }
 
   function sendMessageToClient() {
-    if(messageInput !== ""){
+    if (messageInput !== "") {
       const response = {
         id: "CSV-972384",
         text: messageInput,
@@ -66,27 +66,26 @@ function ChatSidebar() {
   }
 
   return (
-    <div
+    <div id="chat-sidebar"
       style={isChatSidebarOpen ? { bottom: "0%" } : { bottom: "-78%" }}
-      id="chat-sidebar"
     >
       <div className="chat-sidebar-header">
-        <button id="btn-show-chat" onClick={changeChatSidebarOpenHandler}>
+        <button onClick={changeChatSidebarOpenHandler}>
           <span className="material-icons-outlined">
             {isChatSidebarOpen ? "expand_more" : "expand_less"}
           </span>
         </button>
 
-        <div>
+        {clients? (<div>
           <figure>
             <img src={clients[selectedClient].image} alt="" />
             {formatClientStatus(clients[selectedClient].status)}
           </figure>
           <figcaption>{clients[selectedClient].name}</figcaption>
-        </div>
+        </div>):(<div></div>)}
       </div>
 
-      <div className="chat-sidebar-body">
+      {clients? (<div className="chat-sidebar-body">
         <div className="usrs-to-talk-container">
           {clients.map((current, ind) => {
             return (
@@ -107,16 +106,15 @@ function ChatSidebar() {
         </div>
 
         <div id="chat-send-received-msg-container">
-          
-          {messages? 
-            (<ChatMessage
+          {messages ? (
+            <ChatMessage
               client={clients[selectedClient]}
               admin={Admin}
               messages={messages}
-            />)
-            :
-            (<Loading title='Mensajes' />)
-          }
+            />
+          ) : (
+            <Loading title="Mensajes" />
+          )}
 
           <div id="chat-send-msg-container">
             <input
@@ -135,7 +133,7 @@ function ChatSidebar() {
             </button>
           </div>
         </div>
-      </div>
+      </div>):(<div className="chat-sidebar-body"><Loading /></div>)}
     </div>
   );
 }

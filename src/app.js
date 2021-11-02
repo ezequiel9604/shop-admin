@@ -11,6 +11,7 @@ import Profile from "./page/profile.component/Profile";
 import Inventory from "./page/inventory.component/Inventory";
 import Comment from "./page/comment.component/Comment";
 import Order from "./page/order.component/Order";
+import Chat from "./page/chat.component/Chat";
 import { Admin } from "./dummyData";
 import { AdminContext } from "./store/AdminContext"; 
 
@@ -56,6 +57,13 @@ function App(props) {
             <Profile />
           </Layout>
         </Route>
+
+        <Route path="/chat">
+          <Layout>
+            <Chat />
+          </Layout>
+        </Route>
+
       </AdminContext.Provider>
     </Switch>
   );

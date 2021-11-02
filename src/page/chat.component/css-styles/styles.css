@@ -1,0 +1,328 @@
+
+div.box-chat{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+
+div.contacts{
+	border-right: 1px solid #dddddd;
+	width: 35%;
+}
+
+div.info-user{
+	width: 40%;
+	position: absolute;
+	top: 0;
+	right: -42%;	
+
+	transition: right 0.5s ease;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 4px #333333;
+	z-index: 10;
+}
+
+div.contact-header,
+div.messages-header{
+	border-bottom: 1px solid #dddddd;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #615f5f;
+}
+
+div.contact-header h3,
+div.messages-header h3{
+	width: fit-content;
+	margin: 20px 0;
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+div.messages-header figure,
+div.contact-header figure, 
+div.contact-section figure{
+	/*border: 1px solid;*/
+	width: fit-content;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+
+	position: relative;
+}
+
+div.messages-header figure img,
+div.contact-header figure img,
+div.contact-section figure img{
+	width: 35px;
+	height: 35px;
+
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+div.messages-header figure strong,
+div.contact-header figure strong{
+	width: fit-content;
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 16px;
+	color: #ffffff;
+	margin-left: 10px;
+}
+
+div.messages-header > button,
+div.contact-header > button, 
+div.contact-section button{
+	border: none;
+	width: fit-content;
+	background-color: transparent;
+	display: flex;
+	padding: 6px;
+	border-radius: 50%;
+	color: #4d4d4d;
+	transition: all 0.5s ease-in-out;
+	position: relative;
+}
+
+div.contact-section button span{
+    font-size: 20px;
+}
+
+div.messages-header > button:hover,
+div.contact-header > button:hover{
+	background-color: #d5d9dc;
+}
+
+div.contact-section{
+	width: 100%;
+	height: 670px;
+	overflow: auto;
+}
+
+div.contact-section article{
+	border-bottom: 1px solid #dddddd;
+	width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 4px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	cursor: default;
+}
+
+div.contact-section article:hover{
+	background-color: #f9fafa;
+}
+
+div.contact-section figure strong{
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 14px;
+	color: #4d4d4d;
+	margin-left: 10px;
+}
+
+div.contact-section time{
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 12px;
+	color: #4d4d4d;
+}
+
+.msg-not-read{
+	width: fit-content;
+	background-color: #0099cc;
+	padding: 2px 4px;
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	border-radius: 50%;
+
+	position: absolute;
+	top: 0;
+	left: -8px;
+}
+.usr-status{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+}
+
+.usr-connected{
+	background-color: #00e673;
+}
+.usr-offline{
+	background-color: #ffcc00;
+}
+.usr-suspended{
+	background-color: #ff4d4d;
+}
+
+div.messages{
+	width: 65%;
+	background-color: #fafafa;
+}
+
+div.messages-section{
+	width: 100%;
+	height:670px;
+	overflow: auto;
+
+	/*-moz-box-shadow: inset 0 0 5px #dddddd;
+    -webkit-box-shadow: inset 0 0 5px #dddddd;
+   	box-shadow: inset 0 0 5px #dddddd;*/
+}
+
+div.messages-user, 
+div.messages-admin{
+	width: 90%;
+	margin: 20px auto;
+}
+
+div.messages-user p, 
+div.messages-admin p{
+	width: fit-content;
+	margin: 10px 0;
+	box-sizing: border-box;
+	padding: 6px 8px;
+	line-height: 20px;
+	font-family: "raleway-regular", sans-serif;
+	font-size: 14px;
+	color: #4d4d4d;
+
+	background-color: #ffffff;
+	box-shadow: 1px 1px 1px #dddddd;
+	border-radius: 4px;
+}
+
+div.messages-admin p{
+	background-color: #0099cc;
+	color: #ffffff;
+}
+
+div.messages-user time,
+div.messages-admin time{
+    display: block;
+	width: fit-content;
+
+	font-family: "raleway-medium", sans-serif;
+	font-size: 11px;
+	color: #4d4d4d;
+	text-align: left;
+	text-shadow: 1px 1px 1px #dddddd;
+}
+
+div.messages-footer{
+	width: 90%;
+	height: 40px;
+	margin: 5px auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+div.messages-footer input{
+	border: 1px solid #dddddd;
+	width: 94%;
+	box-sizing: border-box;
+
+	padding: 6px 5px;
+	font-family: "raleway-regular", sans-serif;
+	font-size: 14px;
+	color: #4d4d4d;
+	border-radius: 8px;
+}
+
+div.messages-footer button{
+	border: none;
+	width: fit-content;
+	background-color: transparent;
+	display: flex;
+	padding: 4px;
+	border-radius: 4px;
+}
+
+div.dropdown-messages-chat{
+	width: 150px;
+	position: absolute;
+	top: 90%;
+	right: 0%;
+
+	background-color: #f1f2f3;
+	box-shadow: 2px 2px 2px #ccc;
+	border-radius: 6px;
+
+	display: none;
+}
+
+div.dropdown-messages-chat li{
+	display: flex;
+	align-items: center;
+	padding: 6px 5px;
+	margin: 4px 2px;
+	font-family: "raleway-semibold", sans-serif;
+	font-size: 12px;
+	color: #4d4d4d;
+}
+
+div.dropdown-messages-chat li span{
+	font-size: 18px;
+	margin-right: 8px;
+}
+
+div.dropdown-messages-chat li:hover{
+	background-color: #d5d9dc;
+}
+
+.btn-show-more-options:hover .dropdown-messages-chat{
+    display: block;
+}
+
+div.img-info-user{
+	width: 70%;
+	margin: 40px auto;
+}
+
+div.img-info-user img{
+	display: block;
+	width: 150px;
+	height: 150px;
+	margin: 10px auto;
+
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+div.img-info-user h4{
+	margin: 10px 0;
+	font-family: "raleway-medium", sans-serif;
+	font-size: 14px;
+	color: #4d4d4d;
+	text-align: center;
+}
+
+ul.list-info-user{
+	width: 90%;
+	margin: 10px auto;
+}
+
+ul.list-info-user li{
+	display: block;
+	margin-bottom: 20px;
+	font-family: "raleway-medium", sans-serif;
+	font-size: 14px;
+	color: #4d4d4d;
+	line-height: 20px;
+}
+

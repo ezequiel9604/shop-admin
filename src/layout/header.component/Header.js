@@ -9,7 +9,7 @@ function Header(props) {
           <span className="material-icons-outlined">menu_open</span>
         </button>
         <Link to="/" className="logo-title">
-          ShopSite
+          Shop-admin
         </Link>
       </div>
 
