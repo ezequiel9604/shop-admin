@@ -1,0 +1,70 @@
+
+div.box-normal-express{
+	display: flex;
+	justify-content: space-between;
+}
+
+div.box-type{
+	width: 49%;
+	background-color: #ffffff;
+}
+
+div.box-type .total{
+	width: 80%;
+	margin: 10px auto;
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+div.box-type .total p,
+div.box-type .total strong{
+	display: block;
+	width: fit-content;
+
+	color: #4d4d4d;
+}
+
+div.box-type .total p{
+	font-family: raleway-medium;
+	font-size: 16px;
+}
+
+div.box-type .total strong{
+	font-family: raleway-medium;
+	font-size: 35px;
+}
+
+div.box-type .shipping{
+	width: 90%;
+	margin: 10px auto;
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+}
+
+div.box-type .shipping article{
+	width: 33%;
+
+	color: #4d4d4d;
+	text-align: center;
+}
+
+div.box-type .shipping article label{
+	display: block;
+	width: 100%;
+
+	font-family: raleway-regular;
+	font-size: 14px;
+}
+
+div.box-type .shipping article strong{
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+	font-family: raleway-medium;
+	font-size: 18px;
+}

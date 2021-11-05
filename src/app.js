@@ -12,6 +12,7 @@ import Inventory from "./page/inventory.component/Inventory";
 import Comment from "./page/comment.component/Comment";
 import Order from "./page/order.component/Order";
 import Chat from "./page/chat.component/Chat";
+import OrderStats from "./page/orderStats.component/OrderStats";
 import { Admin } from "./dummyData";
 import { AdminContext } from "./store/AdminContext"; 
 
@@ -61,6 +62,12 @@ function App(props) {
         <Route path="/chat">
           <Layout>
             <Chat />
+          </Layout>
+        </Route>
+
+        <Route path="/order-stats">
+          <Layout>
+            <OrderStats />
           </Layout>
         </Route>
 

@@ -75,7 +75,7 @@ function Aside(props) {
           style={isStatsOpen ? { maxHeight: "106px" } : { maxHeight: "0" }}
           className="sidebar-panel"
         >
-          <Link to="/" className="sidebar-panel-links">
+          <Link to="/order-stats" className="sidebar-panel-links">
             Pedidos
           </Link>
           <Link to="/" className="sidebar-panel-links">
