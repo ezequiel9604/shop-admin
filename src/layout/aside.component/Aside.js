@@ -78,10 +78,10 @@ function Aside(props) {
           <Link to="/order-stats" className="sidebar-panel-links">
             Pedidos
           </Link>
-          <Link to="/" className="sidebar-panel-links">
+          <Link to="/user-stats" className="sidebar-panel-links">
             Usuarios
           </Link>
-          <Link to="/" className="sidebar-panel-links">
+          <Link to="/inventory-stats" className="sidebar-panel-links">
             Inventario
           </Link>
           <Link to="/" className="sidebar-panel-links">

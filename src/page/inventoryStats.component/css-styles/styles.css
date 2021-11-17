@@ -1,5 +1,6 @@
 
-div.box-category-order{
+/*box category inventory*/
+div.box-category-inventory{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -11,6 +12,7 @@ div.box-outside-control{
 
 	display: flex;
 	justify-content: space-around;
+
 	background-color: #ffffff;
 }
 
@@ -33,8 +35,12 @@ div.box-outside-control .box-buttons select{
 	border: transparent;
 }
 
+
+/*box category*/
 div.box-category{
-	width: 18%;
+	width: 15%;
+	margin-bottom: 10px;
+
 	background-color: #ffffff;
 }
 
@@ -73,10 +79,8 @@ div.box-category p{
 .box-alert-error strong{
 	color: #ff3300;
 }
-.box-alert-cancel strong{
-	color: #333333;
-}
 
+/*box chart lines*/
 div.box-chart-lines{
 	background-color: #ffffff;
 }
@@ -87,35 +91,23 @@ div.chart-lines{
 	margin: 10px auto;
 
 	display: flex;
+
 	position: relative;
 }
 
 div.box-table{
-	width: 100%;
 	background-color: #ffffff;
 }
 
 div.box-table-head label{
 	display: block;
-	width: 14%;
+	width: 20%;
 }
 
 div.box-table-body article p{
-	width: 14%;
+	width: 20%;
 }
 
-.box-table-success{
-	background-color: #00cc99;
-}
-.box-table-warning{
-	background-color: #ffcc00;
-}
-.box-table-secundary{
-	background-color: #0099ff;
-}
-.box-table-cancel{
-	background-color: #333333;
-}
-.box-table-error {
-	background-color: #ff3300;
+div.box-table-body article p small{
+	color: #339966;
 }

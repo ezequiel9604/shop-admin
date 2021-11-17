@@ -9,6 +9,11 @@ div.box-type{
 	background-color: #ffffff;
 }
 
+div.type-column-3{
+	width: 32%;
+	background-color: #ffffff;
+} 
+
 div.box-type .total{
 	width: 80%;
 	margin: 10px auto;
@@ -28,12 +33,12 @@ div.box-type .total strong{
 }
 
 div.box-type .total p{
-	font-family: raleway-medium;
+	font-family: "raleway-medium", sans-serif;
 	font-size: 16px;
 }
 
 div.box-type .total strong{
-	font-family: raleway-medium;
+	font-family: "raleway-medium", sans-serif;
 	font-size: 35px;
 }
 
@@ -57,7 +62,7 @@ div.box-type .shipping article label{
 	display: block;
 	width: 100%;
 
-	font-family: raleway-regular;
+	font-family: "raleway-regular", sans-serif;
 	font-size: 14px;
 }
 
@@ -65,6 +70,6 @@ div.box-type .shipping article strong{
 	display: block;
 	width: 100%;
 	margin: 10px 0;
-	font-family: raleway-medium;
+	font-family: "raleway-medium", sans-serif;
 	font-size: 18px;
 }

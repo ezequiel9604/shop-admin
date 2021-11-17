@@ -331,7 +331,7 @@ export const Brands = [
 ];
 
 export const Departments = [
-  "Tecnologia",
+  "Technology",
   "Ferreteria",
   "Ropa",
   "Calzado",
@@ -348,7 +348,8 @@ export const Items = [
     gender: "all",
     stock: 25,
     quality: 4.8,
-    department: "Tecnologia",
+    wasSold: true,
+    department: "technology",
     brand: "brand 2",
     subItems: [
       {
@@ -380,7 +381,8 @@ export const Items = [
     gender: "all",
     stock: 20,
     quality: 4.8,
-    department: "Tecnologia",
+    wasSold: false,
+    department: "technology",
     brand: "brand 4",
     subItems: [
       {

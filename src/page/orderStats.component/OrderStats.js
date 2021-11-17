@@ -1,72 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./css-styles/styles.css";
 import BoxType from "../boxType.component/BoxType";
 import BoxCategory from "../boxCategory.componet/BoxCategory";
+import BoxChart from "../boxChart.component/BoxChart";
+import { getTotalByCondition, getAmountByCondition } from "../../helpers";
 import { Orders } from "../../dummyData";
+import BoxTable from "../boxTable.component/BoxTable";
 
 function OrderStats(props) {
-  const [orders, setOrders] = useState(Orders);
+  const [orders, setOrders] = useState([]);
   const [orderShip, setOrderShip] = useState("all");
+
+  useEffect(function () {
+    setOrders(Orders);
+  }, []);
 
   function changeSetOrderShip(event) {
     setOrderShip(event.target.value);
-  }
-
-  function getTotalByType(type) {
-    let counter = 0;
-    orders.forEach((current) => {
-      if (current.type === type) {
-        counter++;
-      }
-    });
-    return counter;
-  }
-  
-  function getAmountByShipping(ship, type) {
-    let counter = 0;
-    orders.forEach((current) => {
-      if (current.type === type) {
-        if (current.shippingMethod === ship) {
-          counter++;
-        }
-      }
-    });
-    return counter;
-  }
-
-  function infoBoxType() {
-    return [
-      {
-        title: "Pedidos Normales",
-        total: getTotalByType("normal"),
-        subtypes: [
-          {
-            title: "Regular",
-            amount: getAmountByShipping("regular", "normal"),
-          },
-          { title: "Rapido", amount: getAmountByShipping("fast", "normal") },
-          { title: "Gratis", amount: getAmountByShipping("free", "normal") },
-        ],
-      },
-      {
-        title: "Pedidos Expresos",
-        total: getTotalByType("express"),
-        subtypes: [
-          {
-            title: "Regular",
-            amount: getAmountByShipping("regular", "express"),
-          },
-          {
-            title: "Rapido",
-            amount: getAmountByShipping("fast", "express"),
-          },
-          {
-            title: "Gratis",
-            amount: getAmountByShipping("free", "express"),
-          },
-        ],
-      },
-    ];
   }
 
   function getAmountByStatus(status) {
@@ -100,48 +50,97 @@ function OrderStats(props) {
     ];
   }
 
-  function renderingStatus(status) {
-    if (status === "received") {
-      return <mark className="box-table-success">Recibido</mark>;
-    } else if (status === "leaving") {
-      return <mark className="box-table-warning">De Salida</mark>;
-    } else if (status === "onitsway") {
-      return <mark className="box-table-secundary">En camino</mark>;
-    } else if (status === "canceled") {
-      return <mark className="box-table-cancel">Cancelados</mark>;
-    } else if (status === "paymenterror") {
-      return <mark className="box-table-error">Error en Pago</mark>;
-    }
+  function infoBoxType() {
+    return [
+      {
+        title: "Pedidos Normales",
+        total: getTotalByCondition(orders, "type", "=", "normal"),
+        subtypes: [
+          {
+            title: "Regular",
+            amount: getAmountByCondition(
+              orders,
+              "type",
+              "=",
+              "normal",
+              "shippingMethod",
+              "regular"
+            ),
+          },
+          {
+            title: "Rapido",
+            amount: getAmountByCondition(
+              orders,
+              "type",
+              "=",
+              "normal",
+              "shippingMethod",
+              "fast"
+            ),
+          },
+          {
+            title: "Gratis",
+            amount: getAmountByCondition(
+              orders,
+              "type",
+              "=",
+              "normal",
+              "shippingMethod",
+              "free"
+            ),
+          },
+        ],
+      },
+      {
+        title: "Pedidos Expresos",
+        total: getTotalByCondition(orders, "type", "=", "express"),
+        subtypes: [
+          {
+            title: "Regular",
+            amount: getAmountByCondition(
+              orders,
+              "type",
+              "=",
+              "express",
+              "shippingMethod",
+              "regular"
+            ),
+          },
+          {
+            title: "Rapido",
+            amount: getAmountByCondition(
+              orders,
+              "type",
+              "=",
+              "express",
+              "shippingMethod",
+              "fast"
+            ),
+          },
+          {
+            title: "Gratis",
+            amount: getAmountByCondition(
+              orders,
+              "type",
+              "=",
+              "express",
+              "shippingMethod",
+              "free"
+            ),
+          },
+        ],
+      },
+    ];
   }
 
-  function formatedNumber(num) {
-    if (num >= 1000 && num < 10000) {
-      let newNum = num + "";
-      let formated = "";
-
-      for (let x = 0; x < newNum.length; x++) {
-        if (x === 1) {
-          formated += ",";
-        }
-        formated += newNum.charAt(x);
+  function getTodaysOrder() {
+    let todaysOrders = [];
+    orders.forEach((current) => {
+      if (current.orderDate === "2021-05-01") {
+        todaysOrders.push(current);
       }
-
-      return formated;
-    } else if (num >= 10000) {
-      let newNum = num + "";
-      let formated = "";
-
-      for (let x = 0; x < newNum.length; x++) {
-        if (x === 2) {
-          formated += ",";
-        }
-        formated += newNum.charAt(x);
-      }
-
-      return formated;
-    }
-
-    return num;
+    });
+    return todaysOrders;
   }
 
   return (
@@ -152,7 +151,7 @@ function OrderStats(props) {
         </div>
       </div>
 
-      <BoxType types={infoBoxType()} />
+      <BoxType column="2" types={infoBoxType()} />
 
       <BoxCategory categories={infoBoxCategory()}>
         <div className="box box-outside-control">
@@ -199,12 +198,40 @@ function OrderStats(props) {
               Todos
             </label>
           </div>
-
         </div>
       </BoxCategory>
 
+      <BoxChart>
+        <div className="box-inside-control">
+          <div className="box-buttons">
+            <mark style={{ backgroundColor: "#0099cc" }}>Normales</mark>
+            <mark style={{ backgroundColor: "#ff9900" }}>Expreso</mark>
+          </div>
+          <div className="box-buttons">
+            <select name="" id="">
+              <option value="">Normal</option>
+              <option value="">Rapido</option>
+              <option value="">Gratis</option>
+              <option value="">Todos</option>
+            </select>
+          </div>
+        </div>
+      </BoxChart>
+
       <div className="box-container">
-        <div className="box box-table">
+        <BoxTable
+          kind="orders"
+          labels={[
+            "Codigo",
+            "Usuario",
+            "Cantidad",
+            "Total",
+            "Estado",
+            "Tipo",
+            "Envio",
+          ]}
+          values={getTodaysOrder()}
+        >
           <div className="box-inside-control">
             <div className="box-buttons">
               <select name="" id="">
@@ -214,33 +241,7 @@ function OrderStats(props) {
               </select>
             </div>
           </div>
-
-          <div className="box-table-head">
-            <label>Codigo</label>
-            <label>Usuario</label>
-            <label>Cantidad</label>
-            <label>Total</label>
-            <label>Estado</label>
-            <label>Tipo</label>
-            <label>Envio</label>
-          </div>
-
-          <div className="box-table-body">
-            {orders.map((current) => {
-              return (
-                <article key={current.id}>
-                  <p>{current.id}</p>
-                  <p>{current.client.name}</p>
-                  <p>{current.items.length}</p>
-                  <p>${formatedNumber(current.total)}</p>
-                  <p>{renderingStatus(current.status)}</p>
-                  <p>{current.type}</p>
-                  <p>{current.shippingMethod}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
+        </BoxTable>
       </div>
     </div>
   );

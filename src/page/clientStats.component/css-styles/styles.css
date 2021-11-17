@@ -1,0 +1,93 @@
+div.box-chart-lines {
+  background-color: #ffffff;
+}
+
+div.chart-lines {
+  width: 850px;
+  height: 260px;
+  margin: 10px auto;
+
+  display: flex;
+  position: relative;
+}
+
+div.box-table-chart {
+  width: 55%;
+  background-color: #ffffff;
+}
+
+div.box-table-chart div.box-table-head label:nth-child(1) {
+  width: 30%;
+}
+div.box-table-chart div.box-table-head label:nth-child(2) {
+  width: 30%;
+}
+div.box-table-chart div.box-table-head label:nth-child(3) {
+  width: 45%;
+}
+
+div.box-table-chart div.box-table-body p:nth-child(1) {
+  width: 30%;
+}
+div.box-table-chart div.box-table-body p:nth-child(2) {
+  width: 30%;
+}
+div.box-table-chart div.box-table-body p:nth-child(3) {
+  width: 45%;
+}
+
+mark.box-table-status-received {
+  background-color: #00cc99;
+}
+mark.box-table-status-gettingout {
+  background-color: #ffcc00;
+}
+mark.box-table-status-onitsway {
+  background-color: #0099ff;
+}
+mark.box-table-status-canceled {
+  background-color: #9900ff;
+}
+mark.box-table-status-paymentError {
+  background-color: #ff3300;
+}
+
+div.box-connected-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+div.box-chart-circle {
+  width: 42%;
+  background-color: #ffffff;
+}
+div.chart-circle {
+  width: 350px;
+  height: 300px;
+  margin: 20px auto;
+  position: relative;
+}
+div.chart-circle svg {
+  width: inherit;
+  height: inherit;
+}
+div.chart-circle svg text {
+  font-family: "raleway-regular", sans-serif;
+  font-size: 13px;
+}
+
+div#tooltip-chart-circle {
+  width: fit-content;
+  position: absolute;
+
+  padding: 4px 6px;
+  font-family: "raleway-regular", sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+
+  display: none;
+}

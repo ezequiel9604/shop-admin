@@ -5,7 +5,7 @@ function BoxType(props) {
     <div className="box-container box-normal-express">
       {props.types.map((current, ind) => {
         return (
-          <div className="box box-type" key={ind}>
+          <div className={"box box-type type-column-"+props.column} key={ind}>
             <div className="total">
               <p>{current.title}:</p>
               <strong>{current.total}</strong>

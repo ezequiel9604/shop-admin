@@ -9,7 +9,6 @@ div#outside-container{
 }
 
 div#inside-container{
-    /*border: 1px solid red;*/
     width: 100%;
 
     position: sticky;
@@ -49,7 +48,6 @@ div.ctn{
 
 /*box container*/
 div.box-container{
-	/*border: 1px solid red;*/
 	width: 100%;
 	margin: 20px 0;
 	position: relative;
@@ -58,8 +56,6 @@ div.box-container{
 /*box*/
 div.box{
 	box-sizing: border-box;
-
-	/*background-color: #ffffff;*/
 	box-shadow: 1px 1px 1px #dddddd;
 	border-radius: 6px;
 
@@ -77,114 +73,15 @@ div.box-header h2{
 	width: fit-content;
 	margin: 20px 20px;
 
-	font-family: "raleway-semibold";
+	font-family: "raleway-semibold", sans-serif;
 	font-size: 25px;
 	color: #ffffff;
 }
 
-/* ------------------ box table ----------------------- */
-
-div.box-table{
-	width: 100%;
-	background-color: #ffffff;
-}
-
-div.box-table-head{
-	width: 100%;
-	margin: 0px auto;
-	margin-top: 20px;
-	margin-bottom: 5px;
-
-	display: flex;
-	justify-content: space-between;
-}
-
-div.box-table-head label{
-	/*border: 1px solid;*/
-	display: block;
-
-	text-align: center;
-	line-height: 20px;
-	font-size: 13px;
-	font-family: "raleway-semibold";
-	color: #4d4d4d;
-}
-
-div.box-table-body{
-	/*border: 1px solid;*/
-	width: 100%;
-}
-
-div.box-table-body article{
-	width: 100%;
-	border-top: 1px solid #dddddd;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-}
-
-div.box-table-body article p{
-	/*border: 1px solid red;*/
-
-	text-align: center;
-	line-height: 40px;
-	font-size: 13px;
-	font-family: "raleway-medium";
-	color: #4d4d4d;
-}
-
-div.box-table-body article p img{
-	/*border: 1px solid;*/
-	width: 30px;
-	height: 30px;
-	margin-right: 5px;
-
-	object-fit: contain;
-	border-radius: 50%;
-	background-color: #f1f1f1;
-}
-
-div.box-table-body mark{
-	border-radius: 4px;
-	padding: 2px 4px;
-	color: #ffffff;
-}
-
-div.box-table-body article button{
-	border: 1px solid #dddddd;
-	border-radius: 6px;
-	display: flex;
-	justify-content: center;
-	padding: 0;
-	background-color: #f2f2f2;
-}
-
-div.box-table-body article button span{
-	font-size: 20px;
-	color: #4d4d4d;
-}
-
-.box-table-success{
-	background-color: #00cc99;
-}
-.box-table-warning{
-	background-color: #ffcc00;
-}
-.box-table-secundary{
-	background-color: #0099ff;
-}
-.box-table-cancel{
-	background-color: #333333;
-}
-.box-table-error {
-	background-color: #ff3300;
-}
 
 /* ------------------ box update details ----------------------- */
 
 form.box-update-details{
-	/*border: 1px solid;*/
 	width: 90%;
 	margin: 10px auto;
 
@@ -204,17 +101,14 @@ form.box-update-details > div article button{
 	padding: 4px 6px;
 
 	font-size: 13px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #4d4d4d;
 }
-
-
 
 /* ------------------ box inside table ----------------------- */
 
 /*box inside table*/
 div.box-inside-table-head{
-	/*border: 1px solid;*/
 	width: 100%;
 	margin: 0px auto;
 
@@ -223,18 +117,16 @@ div.box-inside-table-head{
 	background-color: #f2f2f2;
 }
 div.box-inside-table-head label{
-	/*border: 1px solid;*/
 	display: block;
 	
 	text-align: center;
 	line-height: 18px;
 	font-size: 13px;
-	font-family: "raleway-semibold";
+	font-family: "raleway-semibold", sans-serif;
 	color: #4d4d4d;
 }
 
 div.box-inside-table-body{
-	/*border: 1px solid red;*/
 	width: 100%;
 }
 
@@ -248,17 +140,14 @@ div.box-inside-table-body article{
 }
 
 div.box-inside-table-body article p{
-	/*border: 1px solid red;*/
-
 	text-align: center;
 	line-height: 18px;
 	font-size: 13px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #4d4d4d;
 }
 
 div.box-inside-table-body article p img{
-	/*border: 1px solid;*/
 	width: 30px;
 	height: 30px;
 	margin-right: 5px;
@@ -274,7 +163,6 @@ div.box-inside-table-body mark{
 }
 
 div.box-inside-table-footer{
-	/*border: 1px solid;*/
 	width: 90%;
 	margin: 5px auto;
 
@@ -288,15 +176,13 @@ div.box-inside-table-footer button{
 	border-radius: 2px;
 	padding: 4px 6px;
 	font-size: 13px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #4d4d4d;
 }
-
 
 /* ------------------ box inside control ----------------------- */
 
 div.box-inside-control{
-	/*border: 1px solid blue;*/
 	width: 90%;
 	margin: 15px auto;
 	box-sizing: border-box;
@@ -308,7 +194,6 @@ div.box-inside-control{
 	overflow: hidden;
 }
 div.box-inside-control .box-buttons{
-	/*border: 1px solid;*/
 	width: fit-content;
 	color: #4d4d4d;
 }
@@ -316,10 +201,9 @@ div.box-inside-control .box-buttons{
 div.box-inside-control .box-buttons label,
 div.box-inside-control .box-buttons input[type=week],
 div.box-inside-control .box-buttons select{
-	/*border: 1px solid;*/
 	width: fit-content;
 	margin: 0 5px;
-	font-family: raleway-medium;
+	font-family: "raleway-medium", sans-serif;
 	font-size: 13px;
 	border: transparent;
 	padding: 2px;
@@ -330,18 +214,17 @@ div.box-inside-control .box-buttons select{
 div.box-inside-control .box-buttons mark{
 	width: fit-content;
 	font-size: 13px;
-	font-family: "raleway-medium";
+	font-family: "raleway-medium", sans-serif;
 	border-radius: 4px;
 	padding: 2px 4px;
+	margin-right: 10px;
 	color: #ffffff;
 	cursor: default;
 }
 
-
 /* ------------------ box chart line ----------------------- */
 
 div.box-chart-lines{
-	/*border: 1px solid;*/
 	width: 100%;
 	background-color:#ffffff;
 	position: relative;
@@ -366,7 +249,6 @@ div.box-users-articles{
 /* ------------------ tooltip chat lines ----------------------- */
 
 div#tooltip-chart-lines{
-	/*border: 1px solid;*/
 	width: fit-content;
 	display: block; /*block or none*/
 
@@ -377,7 +259,7 @@ div#tooltip-chart-lines{
 
 	text-align: center;
 	font-size: 14px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #ffffff;
 }
 div#tooltip-chart-lines div:first-child{
@@ -394,7 +276,6 @@ div#tooltip-chart-lines div:last-child{
 /* ------------------ action buttons ----------------------- */
 
 div.action-buttons{
-	/*border: 1px solid;*/
 	width: 90%;
 	margin: 10px auto;
 
@@ -408,7 +289,7 @@ div.action-buttons button{
 
 	padding: 4px;
 	font-size: 14px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #4d4d4d;
 }
 
@@ -424,9 +305,6 @@ div.action-buttons button{
     display: none;
 }
 
-
-
-
 /* ------------------ box add item ----------------------- */
 
 div.box-add-item{
@@ -435,7 +313,6 @@ div.box-add-item{
 }
 
 div.box-add-item form{
-	/*border: 1px solid red;*/
 	width: 90%;
 	margin: 20px auto;
 }
@@ -457,7 +334,7 @@ div.box-add-item button{
 	margin: 2px 0;
 	padding: 4px 6px;
 	font-size: 14px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #4d4d4d;
 
 	border: 1px solid #dddddd;
@@ -475,7 +352,6 @@ div.box-add-item hr{
 div.single-block-add-item,
 div.double-block-add-item, 
 div.triple-block-add-item{
-	/*border: 1px solid;*/
 	width: 100%;
 	margin-bottom: 10px;
 }
@@ -491,7 +367,7 @@ div.triple-block-add-item{
 	margin: 0;
 	margin-right: 20px;
 	font-size: 14px;
-	font-family: "raleway-regular";
+	font-family: "raleway-regular", sans-serif;
 	color: #4d4d4d;
 }
 .input-add-item input[type=text],

@@ -18,9 +18,7 @@ function BoxCategory(props) {
       {props.children}
       {props.categories.map((current, ind) => {
         return (
-          <div key={ind}
-            className={"box box-category " + selectingAlertType(current.title)}
-          >
+          <div key={ind} className={"box box-category "}>
             <strong>{current.total}</strong>
             <p>{current.title}</p>
           </div>

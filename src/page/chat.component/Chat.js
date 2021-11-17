@@ -46,7 +46,7 @@ function Chat(props) {
 
   function getLastInteraction(clientid) {
     let lastDate = new Date("1990-01-01T00:00:00Z");
-    messages.map((current) => {
+    messages.foreach((current) => {
       if (current.clientId === clientid) {
         if (new Date(current.date) > lastDate) {
           lastDate = new Date(current.date);

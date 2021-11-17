@@ -1,0 +1,12 @@
+div.box-chart-lines{
+	background-color: #ffffff;
+}
+
+div.chart-lines{
+	width: 850px;
+	height: 260px;
+	margin: 10px auto;
+
+	display: flex;
+	position: relative;
+}
