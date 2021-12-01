@@ -7,7 +7,7 @@ import UserOverview from "./userOverview.component/UserOverview";
 import { Entities } from "../../dummyData";
 
 function Home(props) {
-  const [entities, setEntities] = useState(Entities);
+  const [entities] = useState(Entities);
 
   return (
     <Fragment>

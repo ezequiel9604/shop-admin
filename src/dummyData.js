@@ -245,6 +245,23 @@ export const Clients = [
     hood: "Brisas del Este",
     city: "Santo Domingo Este",
   },
+  {
+    id: "USR-026741",
+    name: "Rachel Doe",
+    email: "racheldoe@gmail.com",
+    image: WomanAvatar,
+    gender: "female",
+    status: "connected",
+    type: "normal",
+    phone: "809-222-0000",
+    birthday: "1995-12-10",
+    password: "mypassword",
+    unReadMessage: 0,
+    streetNumber: 8,
+    streetName: "Francisco Henriquez y Carvajal",
+    hood: "Brisas del Este",
+    city: "Santo Domingo Este",
+  },
 ];
 
 export const Entities = [

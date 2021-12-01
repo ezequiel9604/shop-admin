@@ -7,8 +7,10 @@ import "./css/general_styles.css";
 import Layout from "./layout/Layout";
 import Home from "./page/home.component/Home";
 import Client from "./page/client.component/Client";
+import AddClient from "./page/addGenerals.component/addClient.components/AddClient";
 import Profile from "./page/profile.component/Profile";
 import Inventory from "./page/inventory.component/Inventory";
+import AddInventory from "./page/addGenerals.component/addInventory.component/AddInventory";
 import Comment from "./page/comment.component/Comment";
 import Order from "./page/order.component/Order";
 import Chat from "./page/chat.component/Chat";
@@ -20,7 +22,7 @@ import { AdminContext } from "./store/AdminContext";
 
 function App(props) {
 
-  const [admin, setAdmin] = useState(Admin);
+  const [admin] = useState(Admin);
 
   return (
     <Switch>
@@ -31,15 +33,27 @@ function App(props) {
           </Layout>
         </Route>
 
-        <Route path="/clients">
+        <Route path="/clients" exact>
           <Layout>
-          <Client />
+            <Client />
           </Layout>
         </Route>
 
-        <Route path="/inventory">
+        <Route path="/clients/add-new-client" exact>
+          <Layout>
+            <AddClient />
+          </Layout>
+        </Route>
+
+        <Route path="/inventory" exact>
           <Layout>
             <Inventory />
+          </Layout>
+        </Route>
+
+        <Route path="/inventory/add-new-product" exact>
+          <Layout>
+            <AddInventory />
           </Layout>
         </Route>
 

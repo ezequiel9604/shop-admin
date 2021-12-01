@@ -26,9 +26,9 @@ function Filter(props) {
     if (type === "order") {
       return <Link to="/addOrder">+ Agregar pedido</Link>;
     } else if (type === "user") {
-      return <Link to="/addUser">+ Agregar usuario</Link>;
+      return <Link to="/clients/add-new-client">+ Agregar usuario</Link>;
     } else if (type === "product") {
-      return <Link to="/addProduct">+ Agregar producto</Link>;
+      return <Link to="/inventory/add-new-product">+ Agregar producto</Link>;
     } else if (type === "comment") {
       return null;
     }
