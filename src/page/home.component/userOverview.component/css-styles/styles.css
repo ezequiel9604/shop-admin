@@ -36,7 +36,7 @@ div.chart-gender svg text,
 div.chart-age svg text, 
 div.chart-address svg text{
 	font-family: "raleway-regular", sans-serif;
-	font-size: 13px;
+	font-size: 11px;
 }
 
 /*tooltip chart-age*/

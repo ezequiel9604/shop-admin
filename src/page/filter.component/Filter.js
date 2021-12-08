@@ -24,7 +24,7 @@ function Filter(props) {
 
   function renderType(type) {
     if (type === "order") {
-      return <Link to="/addOrder">+ Agregar pedido</Link>;
+      return <Link to="/orders/add-new-order">+ Agregar pedido</Link>;
     } else if (type === "user") {
       return <Link to="/clients/add-new-client">+ Agregar usuario</Link>;
     } else if (type === "product") {
@@ -38,7 +38,7 @@ function Filter(props) {
     <Fragment>
       <div className="filter-1">
         <div>
-          <select onChange={changeSelectInput} name="">
+          <select onChange={changeSelectInput} >
             {props.options.map((current, ind) => {
               return (
                 <option key={ind} defaultValue={current}>

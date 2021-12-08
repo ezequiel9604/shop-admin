@@ -53,7 +53,6 @@ form.box-update-details-client > div:nth-child(3){
 }
 
 form.box-update-details-client > div figure{
-	/*border: 1px solid blue;*/
 	width: 100px;
 	height: 80px;
 	margin: 10px auto;
@@ -92,7 +91,6 @@ form.box-update-details-client > div figure label span{
 
 form.box-update-details-client > div h4,
 form.box-update-details-client > div label{
-	/*border: 1px solid;*/
 	display: block;
 	width: 70%;
 	margin: 12px auto;

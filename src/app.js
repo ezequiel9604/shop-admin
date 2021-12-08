@@ -13,6 +13,7 @@ import Inventory from "./page/inventory.component/Inventory";
 import AddInventory from "./page/addGenerals.component/addInventory.component/AddInventory";
 import Comment from "./page/comment.component/Comment";
 import Order from "./page/order.component/Order";
+import AddOrder from "./page/addGenerals.component/addOrder.component/AddOrder";
 import Chat from "./page/chat.component/Chat";
 import OrderStats from "./page/orderStats.component/OrderStats";
 import ClientStats from "./page/clientStats.component/ClientStats";
@@ -63,9 +64,15 @@ function App(props) {
           </Layout>
         </Route>
 
-        <Route path="/orders">
+        <Route path="/orders" exact>
           <Layout>
             <Order />
+          </Layout>
+        </Route>
+
+        <Route path="/orders/add-new-order" exact>
+          <Layout>
+            <AddOrder />
           </Layout>
         </Route>
 
@@ -98,6 +105,8 @@ function App(props) {
             <InventoryStats />
           </Layout>
         </Route>
+
+        
 
       </AdminContext.Provider>
     </Switch>

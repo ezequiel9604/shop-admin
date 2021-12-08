@@ -1,6 +1,14 @@
+import { ResponsiveContainer, Tooltip, PieChart, Pie, Cell } from "recharts";
 import "./css-styles/styles.css";
 
 function UserOverview(props) {
+
+  const data = [
+    {name: 'Hombres', students: 2},
+    {name: 'Mujeres', students: 3},
+  ];
+  const COLORS = ['#0099cc', '#FF8042',];
+  
   return (
     <div className="box-container box-gender-age-address">
       <div className="box box-gender">
@@ -11,29 +19,21 @@ function UserOverview(props) {
         </div>
 
         <div className="chart-gender">
-          <svg width="300" height="210" viewBox="0 0 160 160">
-            <path
-              fill="#cccccc"
-              d="M80, 0 A80,80 0 0 1 125.07027405604916,146.0959181531857 L108.16892128503072,121.30994884574105 A50,50 0 0 0 80,30 Z"
-            ></path>
-            <path
-              fill="#0099cc"
-              d="M125.07027405604916, 146.0959181531857 A80,80 0 1 1 79.98603736605499,0.0000012184696771555537 L79.99127335378436,30.000000761543546 A50,50 0 1 0 108.16892128503072,121.30994884574105 Z"
-            ></path>
+        <ResponsiveContainer height={200} width="100%">
+          <PieChart >
+            <Pie data={data} dataKey="students" outerRadius={100} 
+              innerRadius={60} fill="gray" >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip />
+          </PieChart>
 
-            <g fill="#4d4d4d">
-              <text x="-20%" y="120">
-                Mujer
-              </text>
-              <text x="90%" y="20">
-                Hombre
-              </text>
-            </g>
-          </svg>
 
-          <div id="tooltip-chart-gender">
-            <div></div>
-          </div>
+        </ResponsiveContainer>
+        
+
         </div>
       </div>
 

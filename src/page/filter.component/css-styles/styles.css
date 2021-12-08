@@ -12,6 +12,7 @@ div.filter-1{
 
 	display: flex; 
 	justify-content: space-between;
+	align-items: center;
 }
 
 div.filter-1 div{
